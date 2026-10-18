@@ -1,0 +1,81 @@
+{
+  "companies": [
+    {
+      "company_name": "ABC Foods Ltd",
+      "industry": "Food Manufacturing",
+
+      "financials": {
+        "revenue": 15000000,
+        "ebitda": 1200000,
+        "net_profit": 650000,
+
+        "cash": 450000,
+
+        "current_assets": 3200000,
+        "inventory": 750000,
+        "current_liabilities": 2200000,
+
+        "total_assets": 7800000,
+        "total_liabilities": 4800000,
+        "equity": 3000000,
+
+        "total_debt": 2500000,
+        "interest_expense": 180000
+      },
+
+      "expected_decision": "APPROVE"
+    },
+
+    {
+      "company_name": "XYZ Construction Ltd",
+      "industry": "Construction",
+
+      "financials": {
+        "revenue": 8500000,
+        "ebitda": 550000,
+        "net_profit": 120000,
+
+        "cash": 150000,
+
+        "current_assets": 1800000,
+        "inventory": 100000,
+        "current_liabilities": 1700000,
+
+        "total_assets": 4200000,
+        "total_liabilities": 3000000,
+        "equity": 1200000,
+
+        "total_debt": 1800000,
+        "interest_expense": 140000
+      },
+
+      "expected_decision": "REFER"
+    },
+
+    {
+      "company_name": "Smith Retail Ltd",
+      "industry": "Retail",
+
+      "financials": {
+        "revenue": 4200000,
+        "ebitda": 180000,
+        "net_profit": -80000,
+
+        "cash": 25000,
+
+        "current_assets": 850000,
+        "inventory": 400000,
+        "current_liabilities": 1200000,
+
+        "total_assets": 2300000,
+        "total_liabilities": 2200000,
+        "equity": 100000,
+
+        "total_debt": 1200000,
+        "interest_expense": 110000
+      },
+
+      "expected_decision": "DECLINE"
+    }
+  ]
+}
