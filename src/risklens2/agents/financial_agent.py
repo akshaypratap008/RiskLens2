@@ -1,4 +1,4 @@
-from src.risklens2.models.schemas import FinancialInput, FinancialAnalysis, ProfitabilityMetrics, LiquidityMetrics, LeverageMetrics, CoverageMetrics
+from risklens2.models.financials_schemas import FinancialInput, FinancialAnalysis, ProfitabilityMetrics, LiquidityMetrics, LeverageMetrics, CoverageMetrics
 
 class FinancialAgent:
     """
