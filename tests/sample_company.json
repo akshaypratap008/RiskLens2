@@ -5,7 +5,8 @@
       "industry": "Food Manufacturing",
 
       "financials": {
-        "revenue": 15000000,
+        "revenue_cy": 15000000,
+        "revenue_py": 10000000,
         "ebitda": 1200000,
         "net_profit": 650000,
 
@@ -31,7 +32,8 @@
       "industry": "Construction",
 
       "financials": {
-        "revenue": 8500000,
+        "revenue_cy": 8500000,
+        "revenue_py": 8200000,
         "ebitda": 550000,
         "net_profit": 120000,
 
@@ -57,7 +59,8 @@
       "industry": "Retail",
 
       "financials": {
-        "revenue": 4200000,
+        "revenue_cy": 4200000,
+        "revenue_py": 5000000,
         "ebitda": 180000,
         "net_profit": -80000,
 
