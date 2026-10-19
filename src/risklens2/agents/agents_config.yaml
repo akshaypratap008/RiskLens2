@@ -1,0 +1,14 @@
+version: 1.0.0
+agents:
+  memo_agent: 
+    name: Credit Memo Agent
+    llm_model: "gpt-5"
+    llm_temprature: 0
+    inputs: 
+      - company_profile
+      - financial_analysis
+      - policy_assesment
+      - industry_analysis
+      - media_analysis
+    output:
+      - credit_memo

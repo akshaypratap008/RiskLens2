@@ -2,6 +2,7 @@ from langchain_openai import ChatOpenAI
 from langchain.messages import SystemMessage, HumanMessage
 from pathlib import Path
 from dotenv import load_dotenv
+import yaml
 
 from src.risklens2.models.financials_schemas import FinancialAnalysis, FinancialInput
 from src.risklens2.models.policy_schemas import PolicyAssesment
@@ -9,13 +10,19 @@ from src.risklens2.utils import load_prompt
 
 load_dotenv()
 
-LLM_MODEL = "gpt-5"
+# load config
+AGENT_CONFIG_FILE_PATH = Path(__file__).parents[0] / "agents_config.yaml"
+with open(AGENT_CONFIG_FILE_PATH, "r") as f:
+    config = yaml.safe_load(f)
+
+LLM_MODEL = config['agents']['memo_agent']['llm_model']
+LLM_TEMPRATURE = config['agents']['memo_agent']['llm_temprature']
 
 class MemoAgent:
     """This Agent takes the company financials output from financial agent, policy output from policy agent, industry research output from industry inteligence agent, research output from company research agent, and output from adverse media agent and generates a credit memo."""
 
     def __init__(self):
-        self.llm = ChatOpenAI(model = LLM_MODEL, temperature=0)
+        self.llm = ChatOpenAI(model = LLM_MODEL, temperature=LLM_TEMPRATURE)
 
 
     def create_memo(
@@ -51,6 +58,7 @@ class MemoAgent:
             media_analysis: dict | None = None
     ):
         credit_memo_prompt_path = Path(__file__).resolve().parents[1] / "prompts" / "credit_memo_prompt.yaml"
+        
         prompt = load_prompt(credit_memo_prompt_path)
         system_prompt = prompt['system_prompt']
         user_prompt = f"{prompt['user_template'].format(

@@ -465,11 +465,11 @@ User
  ▼
  Orchestrator
  │
- ├── Company Research Agent
  ├── Financial Analysis Agent
+ ├── Credit Policy Agent
+ ├── Company Research Agent
  ├── Adverse Media Agent
  ├── Industry Intelligence Agent
- ├── Credit Policy Agent
  │
  ▼
  Credit Memo Agent
