@@ -12,3 +12,7 @@ agents:
       - media_analysis
     output:
       - credit_memo
+
+  company_research_agent:
+    name: Company Research Agent
+    
