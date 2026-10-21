@@ -45,3 +45,6 @@ class FillingsInfo(BaseModel):
     director_termination_count_24m: int = Field(default = 0, description="Total number of director terminations in last 24 months")
     director_change_frequency_per_year: float = Field(description = "Avg Number of directors changed per year")
     share_capital_change_count: int = Field(default = 0, description = "Total number of chnages in share capital since incorporation.")
+
+class InsolvencyInfo(BaseModel):
+    has_insolvency: bool = Field(default = False, description = "Is there any insolvency/liquidation")

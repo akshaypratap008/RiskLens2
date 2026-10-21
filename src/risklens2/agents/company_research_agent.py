@@ -4,7 +4,7 @@ import os
 from datetime import date, datetime, timedelta
 import numpy as np
 
-from risklens2.models.company_research_schemas import CompanyProfile, DirectorInfo, PSCInfo, FillingsInfo
+from risklens2.models.company_research_schemas import CompanyProfile, DirectorInfo, PSCInfo, FillingsInfo, InsolvencyInfo
 
 BASE_URL = "https://api.company-information.service.gov.uk/company"
 API_KEY = os.getenv("COMPANY_HOUSE_API")
@@ -208,6 +208,28 @@ class CompanyResearchAgent:
             director_change_frequency_per_year = director_change_frequency_per_year,
             share_capital_change_count=share_capital_change_count
         )
+
+    def get_insolvency_details(self, COMPANY_NUMBER) -> InsolvencyInfo:
+        """This functions finds any insolvency for a given company. Returns true if present."""
+        url = f"{BASE_URL}/{COMPANY_NUMBER}/insolvency"
+
+        response = requests.get(
+            url,
+            auth = (API_KEY, "")
+        )
+
+        has_insolvency = False
+        if response.status_code == 200:
+            has_insolvency = True
+
+        return InsolvencyInfo(
+            has_insolvency=has_insolvency
+        )
+
+    def get_charge_details(self, COMPANY_NUMBER):
+        pass
+            
+
 
 
 
