@@ -1,10 +1,10 @@
 from dotenv import load_dotenv
 import requests
 import os
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 import numpy as np
 
-from src.risklens2.models.company_research_schema import CompanyProfile, DirectorInfo, PSCInfo
+from risklens2.models.company_research_schemas import CompanyProfile, DirectorInfo, PSCInfo, FillingsInfo
 
 BASE_URL = "https://api.company-information.service.gov.uk/company"
 API_KEY = os.getenv("COMPANY_HOUSE_API")
@@ -112,14 +112,18 @@ class CompanyResearchAgent:
 
         psc_data = response.json()
         psc = []
-        active_psc_count = psc_data["active_count"]
+
+        active_psc_count = psc_data.get("active_count", None)
+        psc_shareholding_band = None
+        psc_voting_rights_band = None
+        psc_right_to_add_remove_director = False
         
         for item in psc_data['items']:
             psc_name = item['name']
             psc_type = item['kind']
             psc_ceased = item['ceased']
-            psc_reg_number = item['identification']['registration_number'] if "corporate" in psc_type else None
-            psc_reg_country = item['identification']['country_registered'] if "corporate" in psc_type else None
+            psc_reg_number = item.get('identification').get('registration_number') if "corporate" in psc_type else None
+            psc_reg_country = item.get('identification').get('country_registered') if "corporate" in psc_type else None
             psc_ownership = item['natures_of_control']
             for value in psc_ownership:
                 if "ownership-of-shares-25-to-50-percent" in value:
@@ -136,10 +140,7 @@ class CompanyResearchAgent:
                     psc_voting_rights_band = "75% above"
                 elif "right-to-appoint-and-remove-directors" in value:
                     psc_right_to_add_remove_director = True
-                else:
-                    psc_shareholding_band = ""
-                    psc_voting_rights_band = ""
-                    psc_right_to_add_remove_director = False
+                
                 
             psc.append(
                 PSCInfo(
@@ -158,6 +159,61 @@ class CompanyResearchAgent:
             "psc": psc,
             "active_psc_count": active_psc_count
         }
+
+    def get_filings_details(self, COMPANY_NUMBER) -> FillingsInfo:
+        """This function fetches the details of company's filling history. Example last_filing_date, last_confirmation statement, company_disolved_flag, director_change_count_24m, director_termination_count_12m, director_termination_count_24m, etc"""
+        url = f"{BASE_URL}/{COMPANY_NUMBER}/filing-history"
+        response = requests.get(
+            url,
+            auth = (API_KEY, "")
+        )
+        filings_data = response.json()
+
+        strike_off_action_flag:bool = False
+        last_accounts_filed_date = None
+        last_confirmation_statement_date = None
+        director_change_counts_24m = 0
+        director_termination_count_24m = 0
+        share_capital_change_count = 0
+
+        for filing in filings_data.get("items", []):
+            filing_type = filing.get("type")
+            if filing_type == "AA" and last_accounts_filed_date is None:
+                last_accounts_filed_date = filing.get("date", None)       # last account filed date
+            elif filing_type == "CS01" and last_confirmation_statement_date is None:
+                last_confirmation_statement_date = filing.get("date", None)      # last confirmation statement submission date
+            elif filing_type in ["GAZ1", "GAZ2", "GAZ2(A)", "DISS40"]:
+                strike_off_action_flag = True       # any stricke off action on the company
+
+        # directors appointment and termination frequency
+        # cutoff date -> 24months
+        cut_off_date = (datetime.today() - timedelta(days = 730)).date()
+
+        for filing in filings_data.get('items', []):
+            if filing.get('type') in ["AP01", "AP02"] and datetime.fromisoformat(filing.get('date')).date() >= cut_off_date:
+                director_change_counts_24m += 1
+            elif filing.get('type') == "TM01" and datetime.fromisoformat(filing.get('date')).date() >= cut_off_date:
+                director_termination_count_24m += 1
+            elif filing.get('type') in ["SH01", "SH02", "SH03", "SH06"]:
+                share_capital_change_count += 1
+
+        director_change_frequency_per_year = (director_change_counts_24m / 2)
+
+        return FillingsInfo(
+            strike_off_action_flag=strike_off_action_flag,
+            last_accounts_filed_date=last_accounts_filed_date,
+            last_confirmation_statement_date= last_confirmation_statement_date,
+            director_change_counts_24m=director_change_counts_24m,
+            director_termination_count_24m=director_termination_count_24m,
+            director_change_frequency_per_year = director_change_frequency_per_year,
+            share_capital_change_count=share_capital_change_count
+        )
+
+
+
+
+
+
 
             
 

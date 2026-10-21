@@ -36,3 +36,12 @@ class PSCInfo(BaseModel):
 
     psc_reg_number: Optional[str] = Field(default = None, description = "Registration number of the company in case of corporate psc")
     psc_reg_country: Optional[str] = Field(default = None, description = "Country the psc is registered in if psc is corporate entity")
+
+class FillingsInfo(BaseModel):
+    strike_off_action_flag: bool = Field(description = "Has there ever been a strike off action of the company. Voluntarily or otherwise.")
+    last_accounts_filed_date : datetime | None = Field(default = None, description = "Last date of account filings")
+    last_confirmation_statement_date: datetime | None = Field(default = None, description = "Last date of confirmation statements submission.")
+    director_change_counts_24m: int = Field(default = 0, description="Number of times a new director has been appointed in last 24 months")
+    director_termination_count_24m: int = Field(default = 0, description="Total number of director terminations in last 24 months")
+    director_change_frequency_per_year: float = Field(description = "Avg Number of directors changed per year")
+    share_capital_change_count: int = Field(default = 0, description = "Total number of chnages in share capital since incorporation.")

@@ -31,3 +31,24 @@ Coverage:
 interest_cover = (
     ebitda / interest_expense
 )
+
+account filling flags:
+late_accounts_count
+accounts_overdue
+accounts_last_filed_date
+
+confirmation_statement_overdue
+last_confirmation_statement
+
+insolvency_flag
+insolvency_events
+
+strike_off_action
+strike_off_suspended
+
+director_change_frequency
+
+reg_address_change_frequency
+share_capital_change_count
+
+auditor_resignation_flag

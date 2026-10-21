@@ -37,11 +37,11 @@ from pathlib import Path
 #     print()
 
 
-COMPANY_NUMBER = "SC723677"
+COMPANY_NUMBER = "04458620"
 
 research_agent = CompanyResearchAgent()
 
-psc_info = research_agent.get_psc_details(COMPANY_NUMBER)
-print(psc_info)
+filings_details = research_agent.get_filings_details(COMPANY_NUMBER)
+print(filings_details)
     
 
