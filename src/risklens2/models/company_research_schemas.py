@@ -2,10 +2,6 @@ from pydantic import BaseModel, Field
 from typing import Dict, Optional, Any
 from datetime import datetime
 
-class CompanyResearch(BaseModel):
-    pass
-
-
 class CompanyProfile(BaseModel):
     company_name: str = Field(..., description = "Company's legal name")
     company_number: str = Field(..., description="Company's registration number")
@@ -37,7 +33,7 @@ class PSCInfo(BaseModel):
     psc_reg_number: Optional[str] = Field(default = None, description = "Registration number of the company in case of corporate psc")
     psc_reg_country: Optional[str] = Field(default = None, description = "Country the psc is registered in if psc is corporate entity")
 
-class FillingsInfo(BaseModel):
+class FilingsInfo(BaseModel):
     strike_off_action_flag: bool = Field(description = "Has there ever been a strike off action of the company. Voluntarily or otherwise.")
     last_accounts_filed_date : datetime | None = Field(default = None, description = "Last date of account filings")
     last_confirmation_statement_date: datetime | None = Field(default = None, description = "Last date of confirmation statements submission.")
@@ -48,3 +44,18 @@ class FillingsInfo(BaseModel):
 
 class InsolvencyInfo(BaseModel):
     has_insolvency: bool = Field(default = False, description = "Is there any insolvency/liquidation")
+
+class ChargesInfo(BaseModel):
+    reg_charges_count: int = Field(default= 0, description = "Number of charges registered")
+    satistified_charges_count: int = Field(default = 0, description= "Number of fully paid secured loans")
+    outstanding_charges_count: int = Field(default = 0, description="Number of outstanding secured loans")
+    recent_charges: int = Field(default = 0, description = "Number of new charges in the past 12 months")
+    secured_lenders: list[str] = Field(description = "Names of the secured lenders")
+
+class CompanyResearch(BaseModel):
+    company_profile : CompanyProfile
+    director_details: DirectorInfo
+    psc_details: dict
+    filing_details: FilingsInfo
+    insolvency_details: InsolvencyInfo
+    charges_details: ChargesInfo

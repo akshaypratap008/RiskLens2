@@ -4,7 +4,7 @@ import os
 from datetime import date, datetime, timedelta
 import numpy as np
 
-from risklens2.models.company_research_schemas import CompanyProfile, DirectorInfo, PSCInfo, FillingsInfo, InsolvencyInfo
+from risklens2.models.company_research_schemas import CompanyProfile, DirectorInfo, PSCInfo, FilingsInfo, InsolvencyInfo, ChargesInfo, CompanyResearch
 
 BASE_URL = "https://api.company-information.service.gov.uk/company"
 API_KEY = os.getenv("COMPANY_HOUSE_API")
@@ -12,7 +12,17 @@ API_KEY = os.getenv("COMPANY_HOUSE_API")
 class CompanyResearchAgent:
     """This agent uses company registration number and fetches information from the company house. The fetched info contains Company Number, Company Name, Directors, SIC Codes, Industry, Company Status etc"""
 
-    def get_company_profile(self, COMPANY_NUMBER) -> CompanyProfile:
+    def research(self, COMPANY_NUMBER: str) -> CompanyResearch:
+        return CompanyResearch(
+            company_profile = self._get_company_profile(COMPANY_NUMBER),
+            director_details= self._get_director_details(COMPANY_NUMBER),
+            psc_details= self._get_psc_details(COMPANY_NUMBER),
+            filing_details=self._get_filings_details(COMPANY_NUMBER),
+            insolvency_details=self._get_insolvency_details(COMPANY_NUMBER),
+            charges_details=self._get_charge_details(COMPANY_NUMBER)
+        )
+
+    def _get_company_profile(self, COMPANY_NUMBER) -> CompanyProfile:
         """This function fetches company information using Company House API"""
         url = f"{BASE_URL}/{COMPANY_NUMBER}"
         response = requests.get(
@@ -44,7 +54,7 @@ class CompanyResearchAgent:
             next_confirmation_statement_due=next_confirmation_statement_due
         )
 
-    def get_director_details(self, COMPANY_NUMBER) -> DirectorInfo:
+    def _get_director_details(self, COMPANY_NUMBER) -> DirectorInfo:
         """This function fetches the information about the directors, secratary and other officials of the company using Company House API"""
         url = f"{BASE_URL}/{COMPANY_NUMBER}/officers"
         response = requests.get(
@@ -102,7 +112,7 @@ class CompanyResearchAgent:
             avg_director_tenure= np.mean([director['tenure_in_years'] for director in directors])
         )
 
-    def get_psc_details(self, COMPANY_NUMBER) -> dict:
+    def _get_psc_details(self, COMPANY_NUMBER) -> dict:
         """This function fetches the list of person with significant control. The details include the type of psc, shareholding info etc."""
         url =  f"{BASE_URL}/{COMPANY_NUMBER}/persons-with-significant-control"
         response = requests.get(
@@ -160,7 +170,7 @@ class CompanyResearchAgent:
             "active_psc_count": active_psc_count
         }
 
-    def get_filings_details(self, COMPANY_NUMBER) -> FillingsInfo:
+    def _get_filings_details(self, COMPANY_NUMBER) -> FilingsInfo:
         """This function fetches the details of company's filling history. Example last_filing_date, last_confirmation statement, company_disolved_flag, director_change_count_24m, director_termination_count_12m, director_termination_count_24m, etc"""
         url = f"{BASE_URL}/{COMPANY_NUMBER}/filing-history"
         response = requests.get(
@@ -199,7 +209,7 @@ class CompanyResearchAgent:
 
         director_change_frequency_per_year = (director_change_counts_24m / 2)
 
-        return FillingsInfo(
+        return FilingsInfo(
             strike_off_action_flag=strike_off_action_flag,
             last_accounts_filed_date=last_accounts_filed_date,
             last_confirmation_statement_date= last_confirmation_statement_date,
@@ -209,7 +219,7 @@ class CompanyResearchAgent:
             share_capital_change_count=share_capital_change_count
         )
 
-    def get_insolvency_details(self, COMPANY_NUMBER) -> InsolvencyInfo:
+    def _get_insolvency_details(self, COMPANY_NUMBER) -> InsolvencyInfo:
         """This functions finds any insolvency for a given company. Returns true if present."""
         url = f"{BASE_URL}/{COMPANY_NUMBER}/insolvency"
 
@@ -226,9 +236,40 @@ class CompanyResearchAgent:
             has_insolvency=has_insolvency
         )
 
-    def get_charge_details(self, COMPANY_NUMBER):
-        pass
-            
+    def _get_charge_details(self, COMPANY_NUMBER) -> ChargesInfo:
+        """This function fetches the details of any charges registered against the company."""
+        url = f"{BASE_URL}/{COMPANY_NUMBER}/charges"
+        response = requests.get(
+            url,
+            auth = (API_KEY, "")
+        )
+
+        charges_details = response.json()
+
+        reg_charges_count = charges_details.get("total_count", 0)
+        satistified_charges_count = charges_details.get("satisfied_count", 0)
+        outstanding_charges_count = reg_charges_count - satistified_charges_count
+
+        # recent charges in last 12 months
+        recent_charges = 0
+        cut_off_date = (datetime.today() - timedelta(days = 365)).date()
+        for charge in charges_details.get("items", []):
+            if datetime.fromisoformat(charge['created_on']).date() >= cut_off_date:
+                recent_charges += 1
+
+        secured_lenders = []
+        # names of the lenders
+        for charge in charges_details.get("items", []):
+            for lender in charge.get("persons_entitled", []):
+                secured_lenders.append(lender['name'])
+
+        return ChargesInfo(
+            reg_charges_count=reg_charges_count,
+            satistified_charges_count=satistified_charges_count,
+            outstanding_charges_count=outstanding_charges_count,
+            recent_charges=recent_charges,
+            secured_lenders=secured_lenders
+        )
 
 
 

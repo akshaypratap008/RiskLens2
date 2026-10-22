@@ -6,6 +6,7 @@ import yaml
 
 from src.risklens2.models.financials_schemas import FinancialAnalysis, FinancialInput
 from src.risklens2.models.policy_schemas import PolicyAssesment
+from src.risklens2.models.company_research_schemas import CompanyResearch
 from src.risklens2.utils import load_prompt
 
 load_dotenv()
@@ -31,7 +32,8 @@ class MemoAgent:
             financial_analysis: FinancialAnalysis,
             policy_assesment: PolicyAssesment,
             industry_analysis: dict | None = None,
-            media_analysis: dict | None = None
+            media_analysis: dict | None = None, 
+            company_research: CompanyResearch | None = None
     ):
         """Main function which uses LLM to generate the credit memo based on the company info and assesment results provided."""
         system_prompt, user_prompt = self._generate_prompt(
@@ -39,7 +41,8 @@ class MemoAgent:
             financial_analysis,
             policy_assesment,
             industry_analysis,
-            media_analysis
+            media_analysis,
+            company_research
         )
 
         response = self.llm.invoke([
@@ -55,7 +58,8 @@ class MemoAgent:
             financial_analysis: FinancialAnalysis,
             policy_assesment: PolicyAssesment,
             industry_analysis: dict | None = None,
-            media_analysis: dict | None = None
+            media_analysis: dict | None = None,
+            company_research: CompanyResearch | None = None
     ):
         credit_memo_prompt_path = Path(__file__).resolve().parents[1] / "prompts" / "credit_memo_prompt.yaml"
         
@@ -66,7 +70,8 @@ class MemoAgent:
             financial_analysis = financial_analysis.model_dump_json(indent = 2),
             policy_assesment = policy_assesment.model_dump_json(indent = 2),
             industry_analysis = industry_analysis,
-            media_analysis = media_analysis
+            media_analysis = media_analysis,
+            company_research = company_research
         )}\n{prompt['output_format']}"
 
         return system_prompt, user_prompt

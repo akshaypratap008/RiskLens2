@@ -8,40 +8,51 @@ from src.risklens2.utils import load_prompt
 import json
 from pathlib import Path
 
-# sample_company_data_path = Path("tests/sample_company.json")
-
-# with open(sample_company_data_path, "rb") as file:
-#     sample_test_json = json.load(file)
-
-# financial_agent = FinancialAgent()
-# policy_agent = PolicyAgent()
-# memo_agent = MemoAgent()
-
-# for company in sample_test_json['companies']:
-#     company_profile = {"name": company}
-#     financials = FinancialInput.model_validate(company['financials'])
-
-#     print(company['company_name'])
-#     financial_analysis_results = financial_agent.analyse(financials=financials)
-#     policy_assesement = policy_agent.evaluate(analysis = financial_analysis_results)
-#     memo = memo_agent.create_memo(
-#         company_profile=company_profile,
-#         financial_analysis=financial_analysis_results,
-#         policy_assesment=policy_assesement,
-#         industry_analysis= {},
-#         media_analysis= {}
-#     )
-    
-#     print("-------MEMO----------")
-#     print(memo)
-#     print()
-
-
 COMPANY_NUMBER = "SC226769"
 
-research_agent = CompanyResearchAgent()
+sample_company_data_path = Path("tests/sample_company.json")
 
-insolvency = research_agent.get_insolvency_details(COMPANY_NUMBER)
-print(insolvency)
+with open(sample_company_data_path, "rb") as file:
+    sample_test_json = json.load(file)
+
+company = sample_test_json['companies'][0]
+
+financials = FinancialInput.model_validate(company['financials'])
+financial_agent = FinancialAgent()
+financial_analysis = financial_agent.analyse(financials)
+
+
+policy_agent = PolicyAgent()
+policy_assesment = policy_agent.evaluate(financial_analysis)
+
+
+research_agent = CompanyResearchAgent()
+company_research = research_agent.research(COMPANY_NUMBER)
+
+memo_agent = MemoAgent()
+memo = memo_agent.create_memo(
+    company_profile=financials,
+    financial_analysis=financial_analysis,
+    policy_assesment=policy_assesment,
+    industry_analysis=None,
+    media_analysis=None,
+    company_research=company_research
+)
+
+print(financials)
+print("**************************************************\n")
+
+print(financial_analysis)
+print("**************************************************\n")
+
+print(policy_assesment)
+print("**************************************************\n")
+
+print(company_research)
+print("**************************************************\n")
+
+print("----MEMO----")
+print(memo)
+
     
 

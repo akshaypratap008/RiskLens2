@@ -15,6 +15,7 @@ system_prompt: >
     - Highlight both positive and negative factors
     - Explain the rationale behind the recommendation
     - Write in a concise commercial banking style
+    - Write a summat of company research in 200 words
 
   Recommendations may only be:
     - APPROVE
@@ -29,6 +30,7 @@ system_prompt: >
   - Maximum clarity
   - Use bullet points where appropriate
   - Keep report concise and actionable
+
 
 user_template: |
   Company Profile:
@@ -45,6 +47,9 @@ user_template: |
 
   Adverse Media Search:
   {media_analysis}
+
+  Company Research:
+  {company_research}
 
 output_format: |
   Output Format:
@@ -104,6 +109,9 @@ output_format: |
   APPROVE
   REFER
   DECLINE
+
+  # Company Research
+  Provide key points 
 
   Follow the recommendation with a short justification.
 
