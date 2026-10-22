@@ -4,3 +4,5 @@ langchain
 langgraph
 langchain-openai
 numpy
+langchain-tavily
+typesafe-sdk

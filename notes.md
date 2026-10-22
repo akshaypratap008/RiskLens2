@@ -52,3 +52,5 @@ reg_address_change_frequency
 share_capital_change_count
 
 auditor_resignation_flag
+
+test_company_for adverse media : 06109816

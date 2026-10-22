@@ -15,4 +15,23 @@ agents:
 
   company_research_agent:
     name: Company Research Agent
+
+  media_agent:
+    name: Media Search Agent
+    
+    llm_model: "gpt-5"
+    llm_temprature: 0
+    
+    tavily:
+      max_results: 5
+      topic: "news"
+      search_depth: "advanced"
+      exact_match: True
+    
+    jev_model: "jev-latest"
+
+    inputs:
+      - company_name
+      - company_number
+      - directors_list
     
