@@ -6,3 +6,4 @@ langchain-openai
 numpy
 langchain-tavily
 typesafe-sdk
+pandas

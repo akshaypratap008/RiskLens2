@@ -10,8 +10,10 @@ class CompanyProfile(BaseModel):
     age: int = Field(description="Number of years since incorporation")
     type: str = Field(description = "Company type. Example Ltd or partnership")
     sic_code: list = Field(description= "All the SIC codes associated with the company")
+    industry_names: list[str] = Field(description = "Industries the company operates in (mapped from SIC codes)")
     reg_address: dict = Field(description= "Registered Address of the company")
     next_confirmation_statement_due: datetime | None = Field(default = None, description="Next confirmation statement due date")
+
 
 class DirectorInfo(BaseModel):
     directors: list[Dict[str, Any]] = Field(description= "List of dicts containing info about all the directors")

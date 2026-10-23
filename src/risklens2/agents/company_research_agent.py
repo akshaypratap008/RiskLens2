@@ -3,11 +3,13 @@ import requests
 import os
 from datetime import date, datetime, timedelta
 import numpy as np
+import pandas as pd
 
 from risklens2.models.company_research_schemas import CompanyProfile, DirectorInfo, PSCInfo, FilingsInfo, InsolvencyInfo, ChargesInfo, CompanyResearch
 
 BASE_URL = "https://api.company-information.service.gov.uk/company"
 API_KEY = os.getenv("COMPANY_HOUSE_API")
+SIC_CODE_FILE_PATH = "data/sic_codes.csv"
 
 class CompanyResearchAgent:
     """This agent uses company registration number and fetches information from the company house. The fetched info contains Company Number, Company Name, Directors, SIC Codes, Industry, Company Status etc"""
@@ -39,6 +41,7 @@ class CompanyResearchAgent:
         age = date.today().year - incorporation_date.year
         type = company_data.get('type', "")
         sic_codes = company_data.get('sic_codes', "")
+        industry_names = SICLookup.get_industry_name(sic_codes_list=sic_codes)
         reg_address = company_data.get('registered_office_address', "")
         confirmation_statement = company_data.get("confirmation_statement") or {}
         next_confirmation_statement_due= confirmation_statement.get("next_due", "") or None
@@ -51,6 +54,7 @@ class CompanyResearchAgent:
             age=age,
             type= type,
             sic_code=sic_codes,
+            industry_names=industry_names,
             reg_address=reg_address,
             next_confirmation_statement_due=next_confirmation_statement_due
         )
@@ -271,6 +275,21 @@ class CompanyResearchAgent:
             recent_charges=recent_charges,
             secured_lenders=secured_lenders
         )
+
+class SICLookup:
+    """Maps the sic code with the Industry name"""
+
+    @staticmethod
+    def get_industry_name(sic_codes_list:list) -> list[str]:
+        industry_names = []
+        sic_df = pd.read_csv(SIC_CODE_FILE_PATH)
+        for sic_code in sic_codes_list:
+            match = sic_df[sic_df["SIC Code"] == int(sic_code)]
+
+            if not match.empty:
+                industry_names.append(match.iloc[0]["Description"])
+
+        return industry_names
 
 
 

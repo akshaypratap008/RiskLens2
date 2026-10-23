@@ -215,3 +215,6 @@ class MediaAgent:
             director_queries[director_name] = queries
 
         return company_queries, director_queries
+
+    def _calculate_adverse_media_severity(jev_response):
+        
