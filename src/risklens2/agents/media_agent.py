@@ -1,7 +1,8 @@
 from langchain_tavily import TavilySearch
-from typesafe_sdk import TypeSafeClient, Noul
+from typesafe_sdk import TypeSafeClient, Noul, SystemOneResponse
 
-from src.risklens2.models.media_search_schemas import CompanyAdverseMedia
+from typing import Tuple, Dict
+from src.risklens2.models.media_search_schemas import CompanyAdverseMedia, DirectorAdverseMedia, AdverseMediaInfo
 
 import yaml
 from pathlib import Path
@@ -50,7 +51,7 @@ class MediaAgent:
             model = JEV_MODEL
         )
 
-    def search_adverse_media(self):
+    def search_adverse_media(self) -> AdverseMediaInfo:
         """
         The main function which uses tavily search to search the company using business name and directors names. The output from tavily search is fed to jev dicision model to classify if any critical falgs are present in the news articles. 
         """
@@ -62,51 +63,61 @@ class MediaAgent:
 
         # running company_quries search through tavily
         for query_flag, query in company_queries.items():
+            print(self.company_name, "----- Adverse media checks running")
             search_output = self.tavily_client.invoke({"query": query})
-            jev_result = self._evaluate_search_output(search_output=search_output, evaluation_type = "company_search_evaluation")
-            for flag_type, result in jev_result.answers.items():
-                if flag_type == query_flag:
-                    threshold = 0.50
-                else:
-                    threshold = 0.75
+            evaluated_results = self._evaluate_search_output(search_output=search_output, evaluation_type = "company_search_evaluation")
 
-                if result.noul >= threshold:
-                    company_adverse_media_flags.append({
-                        "flag_type": flag_type,
-                        "jev_score": result.noul,
-                        "url": search_output['results'][0]['url'],
-                        "published_date": search_output['results'][0]['published_date'],
-                        "tavily_search_confidence": search_output['results'][0]['score']
-                    })
+            for item_eval in evaluated_results:
+                search_item = item_eval['search_item']
+                jev_result = item_eval["jev_response"]
+
+                for flag_type, result in jev_result.answers.items():
+                    if flag_type == query_flag:
+                        threshold = 0.50
+                    else:
+                        threshold = 0.75
+
+                    if result.noul >= threshold:
+                        company_adverse_media_flags.append(CompanyAdverseMedia(
+                            flag_type= flag_type,
+                            jev_score= result.noul,
+                            url= search_item.get('url', None),
+                            published_date= search_item.get('published_date', None),
+                            tavily_search_confidence= search_item.get('score', None)
+                        ))
 
         for director_name, queries in drector_queries.items():
+            print(director_name, "--- Adverse Media checks running")            # for testing
             for flag_type, query in queries.items():
                 search_output = self.tavily_client.invoke({"query": query})
-                jev_result = self._evaluate_search_output(search_output=search_output, evaluation_type = "director_search_evaluation", director_name = director_name)
-                print(jev_result)
-                for flag_type, result in jev_result.answers.items():
+                evaluated_results = self._evaluate_search_output(search_output=search_output, evaluation_type = "director_search_evaluation", director_name = director_name)
+                
+                for item_eval, result in jev_result.answers.items():
                     if flag_type == query_flag:
                         threshold = 0.50            # if the flag type being queried using jev is save as the main query flag
                     else:
                         threshold = 0.75            # if the flag type being queried using jev is different from the main query flag
 
                     if result.noul >= threshold:
-                        directors_adverse_media_flags.append({
-                            "director_name": director_name,
-                            "flag_type": flag_type,
-                            "jev_score": result.noul,
-                            "url": search_output['results'][0]['url'],
-                            "published_date": search_output['results'][0]['published_date'],
-                            "tavily_search_confidence": search_output['results'][0]['score']
-                        })
+                        directors_adverse_media_flags.append(DirectorAdverseMedia(
+                            director_name= director_name,
+                            flag_type= flag_type,
+                            jev_score= result.noul,
+                            url = search_item.get('url', None),
+                            published_date= search_item.get('published_date', None),
+                            tavily_search_confidence= search_item.get('score', None)
+                        ))
 
         adverse_media_flags['company_adverse_media_flags'] = company_adverse_media_flags
         adverse_media_flags['directors_adverse_media_flags'] = directors_adverse_media_flags
                 
-        return adverse_media_flags
+        return AdverseMediaInfo(
+            company_adverse_media= company_adverse_media_flags,
+            director_adverse_media= directors_adverse_media_flags
+        )
 
         
-    def _evaluate_search_output(self, search_output, evaluation_type, director_name= None):
+    def _evaluate_search_output(self, search_output, evaluation_type=None, director_name= None) -> SystemOneResponse:
         """
         This function takes the output from the tavily search and feeds it to jev to classify if any fraud, insolvency, legal, regulatory flags are present in the news aticles.
         Similarly for director search output, it uses jev to clasify if any fraud, disqualification or legal flags present. 
@@ -114,8 +125,9 @@ class MediaAgent:
         """
 
         if evaluation_type == "company_search_evaluation":
-            # using jev, checking the core adverse_media metrics
-            for item in search_output['results']:
+            evaluated_items = []
+            # using jev, checking the core adverse_media metrics for the company search output
+            for item in search_output.get('results', []):
                 content = item['title'] + "\n" + item['content']        # concatinate the title and the actual content to feed to jev
 
                 jev_response = self.jev_client.system_one(
@@ -139,8 +151,14 @@ class MediaAgent:
                     }
                 )
 
+                evaluated_items.append({
+                    "search_item": item,
+                    "jev_response": jev_response
+                })
+
         elif evaluation_type == "director_search_evaluation":
-            for item in search_output['results']:
+            evaluated_items = []
+            for item in search_output.get('results', []):
                 content = item['title'] + "\n" + item['content']        # concatinate the title and the actual content to feed to jev 
 
                 jev_response = self.jev_client.system_one(
@@ -157,11 +175,16 @@ class MediaAgent:
                         )
                     }
                 )
+
+                evaluated_items.append({
+                    "search_item": item,
+                    "jev_response": jev_response
+                })
         
-        return jev_response
+        return evaluated_items
 
     
-    def _generate_queries(self):
+    def _generate_queries(self) -> Tuple[Dict, Dict]:
         """
         This function generates quesries for tavily search. 
         Returns: Company Specific Queries and Director specific queries

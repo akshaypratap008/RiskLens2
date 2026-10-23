@@ -40,7 +40,8 @@ class CompanyResearchAgent:
         type = company_data.get('type', "")
         sic_codes = company_data.get('sic_codes', "")
         reg_address = company_data.get('registered_office_address', "")
-        next_confirmation_statement_due= company_data.get("confirmation_statement", "").get("next_due", "")
+        confirmation_statement = company_data.get("confirmation_statement") or {}
+        next_confirmation_statement_due= confirmation_statement.get("next_due", "") or None
 
         return CompanyProfile(
             company_name=company_name,
@@ -76,7 +77,7 @@ class CompanyResearchAgent:
                     {
                         "name": item['name'],
                         "appointment_date": datetime.strptime(item['appointed_on'], "%Y-%m-%d").date(),
-                        "nationality": item['nationality'],
+                        "nationality": item.get("nationality") or None,
                         "tenure_in_years": round((date.today() - datetime.strptime(item['appointed_on'], "%Y-%m-%d").date()).days/365, 2)
                     }
                 )
@@ -87,7 +88,7 @@ class CompanyResearchAgent:
                     {
                         'name': item['name'],
                         "appointment_date": datetime.strptime(item['appointed_on'], "%Y-%m-%d").date(),
-                        "nationality": item['nationality'],
+                        "nationality": item.get("nationality") or None,
                         "tenure_in_years": round((date.today() - datetime.strptime(item['appointed_on'], "%Y-%m-%d").date()).days/365, 2)
                     }
                 )
@@ -98,7 +99,7 @@ class CompanyResearchAgent:
                     {
                         "name": item['name'],
                         "appointment_date": datetime.strptime(item['appointed_on'], "%Y-%m-%d").date(),
-                        "nationality": item['nationality'],
+                        "nationality": item.get("nationality") or None,
                         "role": item['officer_role']
                     }
                 )
@@ -128,13 +129,13 @@ class CompanyResearchAgent:
         psc_voting_rights_band = None
         psc_right_to_add_remove_director = False
         
-        for item in psc_data['items']:
-            psc_name = item['name']
-            psc_type = item['kind']
-            psc_ceased = item['ceased']
+        for item in psc_data.get("items"):
+            psc_name = item.get("name")
+            psc_type = item.get("kind")
+            psc_ceased = item.get("ceased")
             psc_reg_number = item.get('identification').get('registration_number') if "corporate" in psc_type else None
             psc_reg_country = item.get('identification').get('country_registered') if "corporate" in psc_type else None
-            psc_ownership = item['natures_of_control']
+            psc_ownership = item.get('natures_of_control', [])
             for value in psc_ownership:
                 if "ownership-of-shares-25-to-50-percent" in value:
                     psc_shareholding_band = "25% to 50%"
@@ -254,7 +255,7 @@ class CompanyResearchAgent:
         recent_charges = 0
         cut_off_date = (datetime.today() - timedelta(days = 365)).date()
         for charge in charges_details.get("items", []):
-            if datetime.fromisoformat(charge['created_on']).date() >= cut_off_date:
+            if datetime.fromisoformat(charge.get('created_on', None)).date() >= cut_off_date:
                 recent_charges += 1
 
         secured_lenders = []

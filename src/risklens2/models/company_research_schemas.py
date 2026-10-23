@@ -11,7 +11,7 @@ class CompanyProfile(BaseModel):
     type: str = Field(description = "Company type. Example Ltd or partnership")
     sic_code: list = Field(description= "All the SIC codes associated with the company")
     reg_address: dict = Field(description= "Registered Address of the company")
-    next_confirmation_statement_due: datetime = Field(description="Next confirmation statement due date")
+    next_confirmation_statement_due: datetime | None = Field(default = None, description="Next confirmation statement due date")
 
 class DirectorInfo(BaseModel):
     directors: list[Dict[str, Any]] = Field(description= "List of dicts containing info about all the directors")
