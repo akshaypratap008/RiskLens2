@@ -55,7 +55,7 @@ COMPANY_NUMBER = "SC226769"
 # print("----MEMO----")
 # print(memo)
 
-media_agent = MediaAgent(company_name="PATISSERIE VALERIE LTD", company_number=None, directors=[])
+media_agent = MediaAgent(company_name="PURE NINES LTD", company_number=None, directors=["JAGIRDAR, Samir"])
     
 adverse_media = media_agent.search_adverse_media()
 print(adverse_media)
