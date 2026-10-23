@@ -2,6 +2,7 @@ version: 1.0.0
 agents:
   memo_agent: 
     name: Credit Memo Agent
+    role: Generate a credit Memo based on the company information provided by the other agents
     llm_model: "gpt-5"
     llm_temprature: 0
     inputs: 
@@ -15,9 +16,11 @@ agents:
 
   company_research_agent:
     name: Company Research Agent
+    role: To fetch company data from companies house which includes company profile, director details, psc details, charges details and insolvency details.
 
   media_agent:
     name: Media Search Agent
+    role: To search for adverse media info about the company and its directors
     
     llm_model: "gpt-5"
     llm_temprature: 0
@@ -34,4 +37,14 @@ agents:
       - company_name
       - company_number
       - directors_list
-    
+
+  industry_intelligence_agent:
+    name: Industry Intelligence Agent
+    role: To search for Industry outlook, regulatory considerations, insolvency trends, key risks and macroeconomic senstivity from multiple external sources
+
+    tavily:
+      max_results: 5
+      topic: "general"
+      search_depth: "basic"
+      include_domains: ["gov.uk", "ons.gov.uk", "bankofengland.co.uk", "fca.org.uk", "pwc.com", "deloitte.com", "ey.com", "kpmg.com"]
+      threshold: 0.4

@@ -32,6 +32,8 @@ interest_cover = (
     ebitda / interest_expense
 )
 
+--------------------------------
+
 account filling flags:
 late_accounts_count
 accounts_overdue
@@ -53,4 +55,20 @@ share_capital_change_count
 
 auditor_resignation_flag
 
-test_company_for adverse media : 06109816
+----------------------------------
+
+Industry Research agent:
+1) Industry Outlook
+    - growing, stable or declining?
+2) Key industry risks? - output in the form of a list
+3) Macroeconomic sentivity
+    - Interest rates, Inflation, Consumer spending, Energy prices etc.
+    - Output shoul contain HIGH, MEDIUM or LOW
+4) Regulatory Risks
+    - Financial services, Healthcare, energy, food etc
+    - Output should contain the risk signal HIGH, MEDIUM or LOW
+5) Sector specific insolvency trends
+
+SIC code for testing: 41201
+
+
