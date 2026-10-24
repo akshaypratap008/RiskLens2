@@ -48,3 +48,8 @@ agents:
       search_depth: "basic"
       include_domains: ["gov.uk", "ons.gov.uk", "bankofengland.co.uk", "fca.org.uk", "pwc.com", "deloitte.com", "ey.com", "kpmg.com"]
       threshold: 0.4
+    
+    llm:
+      model: "gpt-5"
+      temprature: 0
+      

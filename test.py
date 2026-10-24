@@ -73,7 +73,7 @@ from pathlib import Path
 
 # print("RUN TIME: ", end-start)
 
-industry_names = ['Construction of commercial buildings']
+industry_names = ['Growing of other non-perennial crops']
 industry_research_agent = IndustryIntelligenceAgent(industry_names=industry_names)
 industry_research = industry_research_agent.analyse_industries()
 print(industry_research)
