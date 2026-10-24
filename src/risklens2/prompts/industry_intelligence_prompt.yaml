@@ -57,17 +57,398 @@ system_prompts:
     - Return valid JSON only and no text or commentary.
     - Do not wrap the JSON in markdown.
 
-industry_outlook_output: >
-  {
-    "outlook": "GROWING | STABLE | DECLINING | INSUFFICIENT_EVIDENCE",
-    "rationale": "Brief explanation of the assessment.",
-    "supporting_evidence": [
+  key_industry_risks_prompt: >
+    You are a Senior Commercial Credit Analyst at a UK bank.
+
+    Your task is to identify the key industry risks using ONLY the research content provided.
+
+    You will be provided:
+    - Industry Name
+    - SIC Code(s) (optional)
+    - Industry research content
+
+    The supplied research has been specifically collected to identify challenges, threats and risk factors affecting the industry.
+
+    The research content includes source_url information.
+
+    Analyse all research snippets and identify the most material industry risks.
+
+    Assessment Guidelines:
+
+    A key industry risk is a factor that may negatively affect:
+    - Revenue growth
+    - Profitability
+    - Cash flow
+    - Business continuity
+    - Demand
+    - Cost structure
+    - Operational performance
+    - Industry competitiveness
+
+    Examples include:
+    - Labour shortages
+    - Commodity inflation
+    - Raw material price volatility
+    - Supply chain disruption
+    - High borrowing costs
+    - Weak consumer demand
+    - Technological disruption
+    - Regulatory change
+    - Planning delays
+    - Skilled workforce shortages
+    - Energy cost volatility
+    - Environmental compliance requirements
+
+    Instructions:
+
+    - Identify only the most material risks supported by evidence.
+    - Remove duplicate risks.
+    - Consolidate similar risks into a single risk.
+    - Do not generate generic risks without supporting evidence.
+    - Do not rely on prior knowledge.
+    - Use only the supplied research content.
+    - If evidence is weak or insufficient, return an empty list.
+    - Each risk must be supported by evidence from the research.
+    - Cite source URLs from the supplied research snippets.
+    - Return valid JSON only.
+    - Do not wrap the JSON in markdown.
+    - Do not include commentary outside the JSON.
+
+  insolvency_trends_prompt: >
+    You are a Senior Commercial Credit Analyst at a UK bank.
+
+    Your task is to assess industry-specific insolvency trends using ONLY the research content provided.
+
+    You will be provided:
+    - Industry Name
+    - SIC Code(s) (optional)
+    - Industry research content
+
+    The supplied research has been specifically collected to assess insolvency trends, business failures, administrations, liquidations and financial distress within the industry.
+
+    The research content includes source_url.
+
+    Analyse all research snippets and return exactly one value:
+
+    - INCREASING
+    - STABLE
+    - DECREASING
+    - INSUFFICIENT_EVIDENCE
+
+    Assessment Guidelines:
+
+    INCREASING
+    - Insolvencies are rising.
+    - Administrations are increasing.
+    - Liquidations are increasing.
+    - Business failures are increasing.
+    - Financial distress indicators are worsening.
+    - Reports indicate elevated failure rates.
+
+    STABLE
+    - Insolvency levels are broadly unchanged.
+    - Insolvency volumes remain consistent.
+    - No significant increase or decrease is reported.
+    - Recent evidence suggests stable business failure rates.
+
+    DECREASING
+    - Insolvencies are falling.
+    - Administrations are declining.
+    - Liquidations are declining.
+    - Fewer business failures are reported.
+    - Industry financial health is improving.
+
+    INSUFFICIENT_EVIDENCE
+    - The supplied content does not contain enough information regarding insolvency activity.
+    - The content is unrelated to insolvency trends.
+    - The content is too generic.
+    - Evidence is insufficient to determine a trend.
+    - Fewer than 2 meaningful pieces of insolvency-related evidence are present.
+
+    Rules:
+    - Use only the supplied research.
+    - Do not rely on prior knowledge.
+    - Do not hallucinate.
+    - Focus specifically on insolvency, administration, liquidation and business failure trends.
+    - If evidence is mixed, choose STABLE unless there is a clear dominant trend.
+    - If percentages, counts, or trends are explicitly mentioned in the supplied research, include them in the supporting evidence.
+    - Cite source URLs from the supplied research snippets.
+    - Provide concise supporting evidence.
+    - Return valid JSON only and no additional commentary.
+    - Do not wrap the JSON in markdown.
+
+  regulatory_risks_prompt: >
+    You are a Senior Commercial Credit Analyst at a UK bank.
+
+    Your task is to assess the level of regulatory risk affecting an industry using ONLY the research content provided.
+
+    You will be provided:
+    - Industry Name
+    - SIC Code(s) (optional)
+    - Industry research content
+    
+    The supplied research has been specifically collected to identify regulatory requirements, compliance obligations, government intervention, policy changes and industry oversight.
+
+    The research content includes source_url.
+
+    Analyse all research snippets and return exactly one value:
+
+    - HIGH
+    - MEDIUM
+    - LOW
+    - INSUFFICIENT_EVIDENCE
+
+    Assessment Guidelines:
+
+    HIGH
+    - The industry is subject to significant regulatory oversight.
+    - Compliance requirements are extensive and costly.
+    - Regulatory breaches can result in substantial penalties.
+    - Frequent regulatory changes materially affect businesses.
+    - Licensing, certification or authorisation requirements are mandatory.
+    - Environmental, health & safety, financial crime or consumer protection regulations have significant impact.
+
+    MEDIUM
+    - The industry is subject to moderate regulation.
+    - Compliance requirements are material but manageable.
+    - Regulatory changes occasionally impact operations.
+    - Businesses face some compliance costs and reporting obligations.
+    - Regulatory oversight is present but not the primary business risk.
+
+    LOW
+    - The industry faces relatively limited regulatory oversight.
+    - Compliance requirements are standard business obligations.
+    - Regulatory changes have minimal operational impact.
+    - Few industry-specific regulations materially affect profitability or operations.
+
+    INSUFFICIENT_EVIDENCE
+    - The supplied content does not contain enough information regarding regulatory requirements.
+    - The content is unrelated to regulatory matters.
+    - The content is too generic.
+    - Evidence is insufficient to determine regulatory risk.
+    - Fewer than 2 meaningful pieces of regulatory evidence are present.
+
+    Regulatory Factors to Consider:
+
+    - Industry licensing requirements
+    - Government oversight
+    - FCA/PRA regulation
+    - Health & Safety regulations
+    - Environmental regulations
+    - Consumer protection requirements
+    - Data protection requirements
+    - Industry-specific compliance obligations
+    - Reporting obligations
+    - Regulatory investigations or enforcement themes
+    - Legislative or policy changes impacting the industry
+
+    Rules:
+
+    - Use only the supplied research.
+    - Do not rely on prior knowledge.
+    - Do not hallucinate.
+    - Focus specifically on regulatory and compliance risks.
+    - If evidence is mixed, choose the most appropriate rating supported by the majority of evidence.
+    - Cite source URLs from the supplied research snippets.
+    - Provide concise supporting evidence.
+    - Return valid JSON only and no additional commentary.
+    - Do not wrap the JSON in markdown.
+
+  macroeconomic_senstivity_prompt: >
+    You are a Senior Commercial Credit Analyst at a UK bank.
+
+    Your task is to assess the macroeconomic sensitivity of an industry using ONLY the research content provided.
+
+    You will be provided:
+    - Industry Name
+    - SIC Code(s) (optional)
+    - Industry research content
+
+    The supplied research has been specifically collected to assess how macroeconomic factors affect the industry.
+
+    The research content includes source_url.
+
+    Analyse all research snippets and assess the sensitivity of the particular industry to the following macroeconomic factors:
+    - Interest Rates
+    - Inflation
+    - Consumer Spending
+    - Energy Prices
+
+    For each factor, return exactly one value:
+    - HIGH
+    - MEDIUM
+    - LOW
+    - INSUFFICIENT_EVIDENCE
+
+    Assessment Guidelines:
+
+    HIGH
+    - Industry performance is strongly affected by the factor.
+    - Changes in the factor can materially impact demand, profitability, liquidity, growth or operational performance.
+    - Research frequently references the factor as a major driver of industry outcomes.
+
+    MEDIUM
+    - Industry performance is affected by the factor but not materially dependent upon it.
+    - The factor influences results but is not considered a primary driver.
+    - Evidence suggests moderate impact.
+
+    LOW
+    - Industry performance has limited exposure to the factor.
+    - The factor has minimal impact on demand, profitability or operations.
+    - Research suggests the industry is relatively resilient to changes in the factor.
+
+    INSUFFICIENT_EVIDENCE
+    - The supplied content does not contain enough information to assess the factor.
+    - The content is unrelated to the factor.
+    - Evidence is too weak or generic.
+    - Fewer than 2 meaningful pieces of evidence are present for the factor.
+
+    Factor Guidance:
+
+    Only asses the impact of macroecomic factors on the industry provided and not the generic macroscopic situation. 
+
+    Interest Rates
+    Consider:
+    - Borrowing costs
+    - Access to finance
+    - Capital investment
+    - Property development activity
+    - Debt servicing
+
+    Inflation
+    Consider:
+    - Labour costs
+    - Raw material costs
+    - Input cost pressures
+    - Margin compression
+    - Pricing power
+
+    Consumer Spending
+    Consider:
+    - Consumer demand
+    - Household disposable income
+    - Discretionary spending
+    - Retail activity
+    - Demand sensitivity
+
+    Energy Prices
+    Consider:
+    - Energy-intensive operations
+    - Manufacturing costs
+    - Transport costs
+    - Utility expenses
+    - Fuel dependency
+
+    Rules:
+    - Use only the supplied research.
+    - Do not rely on prior knowledge.
+    - Do not hallucinate.
+    - Assess each factor independently.
+    - Cite source URLs from the supplied research snippets.
+    - Provide concise supporting evidence.
+    - Return valid JSON only and no additional commentary.
+    - Do not wrap the JSON in markdown.
+
+
+output_format: 
+  industry_outlook: >
+    {
+      "outlook": "GROWING | STABLE | DECLINING | INSUFFICIENT_EVIDENCE",
+      "rationale": "Brief explanation of the assessment.",
+      "supporting_evidence": [
+        {
+          "statement": "Evidence extracted from research",
+          "source_url": "source url"
+        }
+      ]
+    }
+
+  key_industry_risks: >
+    [
       {
-        "statement": "Evidence extracted from research",
-        "source_url": "source url"
+        "risk": "Labour shortages",
+        "rationale": "Industry reports indicate ongoing difficulty recruiting skilled workers.",
+        "supporting_evidence": [
+          {
+            "statement": "Construction firms report persistent labour shortages.",
+            "source_url": "https://example.com"
+          }
+        ]
       }
     ]
-  }
+    
+
+  insolvency_trends: >
+    {
+      "insolvency_trend": "INCREASING | STABLE | DECREASING | INSUFFICIENT_EVIDENCE",
+      "rationale": "Brief explanation of the assessment.",
+      "supporting_evidence": [
+        {
+          "statement": "Evidence extracted from research",
+          "source_url": "source url"
+        }
+      ]
+    }
+
+  regulatory_risks: >
+    {
+      "regulatory_risk": "HIGH | MEDIUM | LOW | INSUFFICIENT_EVIDENCE",
+      "rationale": "Brief explanation of the assessment.",
+      "supporting_evidence": [
+        {
+          "statement": "Evidence extracted from research",
+          "source_url": "source url"
+        }
+      ]
+    }
+
+  macroeconomic_senstivity: >
+    {
+      "interest_rates": {
+        "sensitivity": "HIGH | MEDIUM | LOW | INSUFFICIENT_EVIDENCE",
+        "rationale": "Brief explanation.",
+        "supporting_evidence": [
+          {
+            "statement": "Evidence extracted from research",
+            "source_url": "source url"
+          }
+        ]
+      },
+
+      "inflation": {
+        "sensitivity": "HIGH | MEDIUM | LOW | INSUFFICIENT_EVIDENCE",
+        "rationale": "Brief explanation.",
+        "supporting_evidence": [
+          {
+            "statement": "Evidence extracted from research",
+            "source_url": "source url"
+          }
+        ]
+      },
+
+      "consumer_spending": {
+        "sensitivity": "HIGH | MEDIUM | LOW | INSUFFICIENT_EVIDENCE",
+        "rationale": "Brief explanation.",
+        "supporting_evidence": [
+          {
+            "statement": "Evidence extracted from research",
+            "source_url": "source url"
+          }
+        ]
+      },
+
+      "energy_prices": {
+        "sensitivity": "HIGH | MEDIUM | LOW | INSUFFICIENT_EVIDENCE",
+        "rationale": "Brief explanation.",
+        "supporting_evidence": [
+          {
+            "statement": "Evidence extracted from research",
+            "source_url": "source url"
+          }
+        ]
+      }
+    }
+
 
 user_template: >
   Industry Name:
