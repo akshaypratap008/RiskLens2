@@ -16,6 +16,7 @@ system_prompts:
     - GROWING
     - STABLE
     - DECLINING   
+    - INSUFFICIENT EVIDENCE
 
     Assessment Guidelines:
     GROWING
@@ -38,6 +39,14 @@ system_prompts:
     - Investment activity is slowing.
     - Persistent structural challenges exist.
 
+    INSUFFICIENT_EVIDENCE
+    - The supplied content does not contain enough information to determine industry direction.
+    - The content is mostly generic.
+    - The content is unrelated to industry growth or outlook.
+    - The evidence is contradictory without a dominant trend.
+    - Fewer than 2 meaningful pieces of evidence supporting an outlook are present.
+    - If there is insufficient evidence available to make a decision. Do not include any supporting evidence
+
     Rules:
     - Use only the supplied research.
     - Do not rely on prior knowledge.
@@ -48,17 +57,17 @@ system_prompts:
     - Return valid JSON only and no text or commentary.
     - Do not wrap the JSON in markdown.
 
-  industry_outlook_output: >
-    {
-      "industry_outlook": "GROWING | STABLE | DECLINING",
-      "rationale": "Brief explanation of the assessment.",
-      "supporting_evidence": [
-        {
-          "statement": "Evidence extracted from research",
-          "source_url": "source url"
-        }
-      ]
-    }
+industry_outlook_output: >
+  {
+    "outlook": "GROWING | STABLE | DECLINING | INSUFFICIENT_EVIDENCE",
+    "rationale": "Brief explanation of the assessment.",
+    "supporting_evidence": [
+      {
+        "statement": "Evidence extracted from research",
+        "source_url": "source url"
+      }
+    ]
+  }
 
 user_template: >
   Industry Name:

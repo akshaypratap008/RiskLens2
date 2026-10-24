@@ -9,6 +9,7 @@ from langchain_openai import ChatOpenAI
 from langchain.messages import SystemMessage, HumanMessage
 
 from src.risklens2.utils import load_prompt
+from src.risklens2.models.industry_intelligence_schemas import IndustryOutlook, SupportingEvidence
 
 # load config
 AGENT_CONFIG_FILE_PATH = Path(__file__).parents[0] / "agents_config.yaml"
@@ -72,9 +73,7 @@ class IndustryIntelligenceAgent:
                 combined_context = self._combine_context(filtered_results=filtered_results)
                 evaluation_results = self._evaluate_research(industry_name=industry, combined_context = combined_context)
                 
-                print(evaluation_results)
-                print()
-                print("----------------------------------------------")
+                return evaluation_results
 
     def _combine_context(self, filtered_results: list[dict]):
         combined_context = ''
@@ -99,13 +98,14 @@ Content: {result['content']}
         user_prompt = f"{prompt['user_template'].format(
             industry_name = industry_name,
             search_content = combined_context
-        )}\nOutput format:\n{prompt["system_prompts"]['industry_outlook_output']}"
+        )}\nOutput format:\n{prompt['industry_outlook_output']}"
 
-        response = self.llm.invoke([
+        outlook_llm = self.llm.with_structured_output(IndustryOutlook)
+        response = outlook_llm.invoke([
             SystemMessage(content = system_prompt),
             HumanMessage(content = user_prompt)
         ])
 
-        return response.content
+        return response
 
     
