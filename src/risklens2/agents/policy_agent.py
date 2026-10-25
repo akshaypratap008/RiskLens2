@@ -1,5 +1,5 @@
 from risklens2.policy.financial_rules import FinancialRules
-from risklens2.models.policy_schemas import (PolicyAssesment, PolicyRuleResult)
+from risklens2.models.policy_schemas import (PolicyAssessment, PolicyRuleResult)
 from risklens2.models.financials_schemas import FinancialAnalysis, ProfitabilityMetrics
 from typing import Literal
 
@@ -121,7 +121,7 @@ class PolicyAgent:
         failed_count = len(failed_rules)
         recomendation = self._get_recomendation(failed_count)
 
-        return PolicyAssesment(
+        return PolicyAssessment(
             passed_rules = passed_rules,
             failed_rules = failed_rules,
             recomendation= recomendation

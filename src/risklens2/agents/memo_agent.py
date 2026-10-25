@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import yaml
 
 from src.risklens2.models.financials_schemas import FinancialAnalysis, FinancialInput
-from src.risklens2.models.policy_schemas import PolicyAssesment
+from src.risklens2.models.policy_schemas import PolicyAssessment
 from src.risklens2.models.company_research_schemas import CompanyResearch
 from src.risklens2.utils import load_prompt
 
@@ -30,7 +30,7 @@ class MemoAgent:
             self,
             company_profile: FinancialInput,
             financial_analysis: FinancialAnalysis,
-            policy_assesment: PolicyAssesment,
+            policy_assesment: PolicyAssessment,
             industry_analysis: dict | None = None,
             media_analysis: dict | None = None, 
             company_research: CompanyResearch | None = None
@@ -56,7 +56,7 @@ class MemoAgent:
             self,
             company_profile: dict,
             financial_analysis: FinancialAnalysis,
-            policy_assesment: PolicyAssesment,
+            policy_assesment: PolicyAssessment,
             industry_analysis: dict | None = None,
             media_analysis: dict | None = None,
             company_research: CompanyResearch | None = None
