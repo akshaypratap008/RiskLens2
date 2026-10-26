@@ -81,6 +81,7 @@ COMPANY_NUMBER = "SC196478"
 # end = time.time()
 # print("RUN TIME: ", end-start)
 
+start = time.time()
 initial_state = {
     "company_number": "SC196478"
 }
@@ -108,8 +109,11 @@ final_state = workflow.invoke(
         }
     ), config=config
 )
+end = time.time()
 
 print(final_state)
+print()
+print("RUN TIME: ", end-start)
 
 
 
