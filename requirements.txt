@@ -7,3 +7,4 @@ numpy
 langchain-tavily
 typesafe-sdk
 pandas
+pytest
