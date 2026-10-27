@@ -1,0 +1,141 @@
+[ 2026-10-26 23:45:18,293] 18 root - INFO - Starting Company Research for company_number: SC196478
+[ 2026-10-26 23:45:22,417] 25 root - INFO - Company research COMPLETED for company_number: SC196478
+[ 2026-10-26 23:45:22,421] 56 root - INFO - Adverse Media research STARTED for M B C C (FOODS) LIMITED
+[ 2026-10-26 23:45:22,601] 41 root - INFO - Industry Research STARTED for industry_names: ['Other retail sale of food in specialised stores']
+[ 2026-10-26 23:45:23,861] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:23,864] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 318ms (request req_01a17a9ac645784ab32f4d8acb4e6b55)
+[ 2026-10-26 23:45:24,028] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:24,029] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 158ms (request req_01a17a9ac6eb7db1a5b00f53bc23c388)
+[ 2026-10-26 23:45:24,182] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:24,187] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 156ms (request req_01a17a9ac78e79e3ae190572c754ede8)
+[ 2026-10-26 23:45:24,331] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:24,337] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 147ms (request req_01a17a9ac8237a0b999305041d89f3e0)
+[ 2026-10-26 23:45:24,513] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:24,514] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 175ms (request req_01a17a9ac8be7e7f84b18add5403d8d4)
+[ 2026-10-26 23:45:26,246] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:26,247] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 158ms (request req_01a17a9acf907778bf8ca5def634c2bb)
+[ 2026-10-26 23:45:26,409] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:26,410] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 163ms (request req_01a17a9ad03378ed8b615cdf93701be6)
+[ 2026-10-26 23:45:26,582] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:26,589] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 177ms (request req_01a17a9ad0d77cd0b2403c486b28c826)
+[ 2026-10-26 23:45:26,761] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:26,762] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 171ms (request req_01a17a9ad18a7494a9b895b37cacd7ab)
+[ 2026-10-26 23:45:26,899] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:26,899] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 137ms (request req_01a17a9ad22f73eeaaadb47ccf6d664e)
+[ 2026-10-26 23:45:28,158] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:28,159] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 170ms (request req_01a17a9ad70070b194bd9f91b421c471)
+[ 2026-10-26 23:45:28,322] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:28,323] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 163ms (request req_01a17a9ad7b2729688f74eb22dd36345)
+[ 2026-10-26 23:45:28,471] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:28,472] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 148ms (request req_01a17a9ad84c71f8a64323c6bf52b794)
+[ 2026-10-26 23:45:28,624] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:28,624] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 151ms (request req_01a17a9ad8e070759a5c41626be2c6a2)
+[ 2026-10-26 23:45:28,810] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:28,812] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 186ms (request req_01a17a9ad97a7f62abd3c58e720d3140)
+[ 2026-10-26 23:45:29,975] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:29,980] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 189ms (request req_01a17a9ade0971d4b4a5725b968dd95d)
+[ 2026-10-26 23:45:30,128] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:30,131] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 148ms (request req_01a17a9aded47da8b213710e456d9c08)
+[ 2026-10-26 23:45:30,347] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:30,351] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 218ms (request req_01a17a9adf6474fc89da3ba43a1feafc)
+[ 2026-10-26 23:45:30,506] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:30,508] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 155ms (request req_01a17a9ae044733489de7fefda7c5672)
+[ 2026-10-26 23:45:30,652] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:30,653] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 144ms (request req_01a17a9ae0d77d5f95be85af6aa1aa5d)
+[ 2026-10-26 23:45:31,881] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:31,955] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:31,966] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 213ms (request req_01a17a9ae5b97c998517136581e3afef)
+[ 2026-10-26 23:45:32,105] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:32,111] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 142ms (request req_01a17a9ae6877e79bd16b0a32057bd2e)
+[ 2026-10-26 23:45:32,258] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:32,259] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 146ms (request req_01a17a9ae71b7f6eb52e2f848007d97d)
+[ 2026-10-26 23:45:32,409] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:32,410] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 150ms (request req_01a17a9ae7af7806867b1b3ee4953a79)
+[ 2026-10-26 23:45:32,542] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:32,543] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 133ms (request req_01a17a9ae83f72938aced85a88fa9429)
+[ 2026-10-26 23:45:33,732] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:33,734] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 158ms (request req_01a17a9aecd67de0986a589e91f5437b)
+[ 2026-10-26 23:45:33,883] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:33,884] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 149ms (request req_01a17a9aed72727b9efea977b60cd157)
+[ 2026-10-26 23:45:34,018] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:34,020] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 134ms (request req_01a17a9aee097d05b89564ed68aea0a2)
+[ 2026-10-26 23:45:34,163] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:34,165] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 144ms (request req_01a17a9aee8f7901b94f6fd8a14d2d06)
+[ 2026-10-26 23:45:34,316] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:34,318] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 151ms (request req_01a17a9aef247851971df2017a2b178f)
+[ 2026-10-26 23:45:39,040] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:39,042] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 142ms (request req_01a17a9b01a47cd695cc493e3d2f885c)
+[ 2026-10-26 23:45:39,220] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:39,222] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 178ms (request req_01a17a9b02467ea3b07ab9f5789b5bed)
+[ 2026-10-26 23:45:40,654] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:40,656] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 146ms (request req_01a17a9b07e87a81825506d974e90d66)
+[ 2026-10-26 23:45:40,807] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:40,808] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 150ms (request req_01a17a9b08777bb090aae3b7350ed79f)
+[ 2026-10-26 23:45:40,961] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:40,963] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 154ms (request req_01a17a9b090e7a9081d4c9af45d2430e)
+[ 2026-10-26 23:45:41,118] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:41,120] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 156ms (request req_01a17a9b09ae72f783e43031ae575d99)
+[ 2026-10-26 23:45:41,268] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:41,269] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 147ms (request req_01a17a9b0a497011a333d90f1300e3e4)
+[ 2026-10-26 23:45:42,422] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:42,424] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 163ms (request req_01a17a9b0ec17b7487a1e9b21784908c)
+[ 2026-10-26 23:45:42,571] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:42,572] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 147ms (request req_01a17a9b0f657629aa7778a365cdf83c)
+[ 2026-10-26 23:45:42,722] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:42,723] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 149ms (request req_01a17a9b0ff97e8fb5d97ad1f2dbacd7)
+[ 2026-10-26 23:45:42,891] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:42,892] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 168ms (request req_01a17a9b10907162bc68142526da7e43)
+[ 2026-10-26 23:45:43,079] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:43,081] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 187ms (request req_01a17a9b113a7c16b59fa9218e619ade)
+[ 2026-10-26 23:45:44,226] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:44,227] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 163ms (request req_01a17a9b15c774c99bd6d12a72c52b3e)
+[ 2026-10-26 23:45:44,389] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:44,391] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 163ms (request req_01a17a9b166f700d9dce4efad582527a)
+[ 2026-10-26 23:45:44,540] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:44,542] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 149ms (request req_01a17a9b171170cdab15d037789c6a50)
+[ 2026-10-26 23:45:44,699] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:44,701] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 157ms (request req_01a17a9b17b177e28f7804608b9b5097)
+[ 2026-10-26 23:45:44,850] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:44,851] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 148ms (request req_01a17a9b184a7ed4a603cc3d564031dd)
+[ 2026-10-26 23:45:46,099] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:46,100] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 175ms (request req_01a17a9b1d1576cbae7f3f3a2a8fa5ab)
+[ 2026-10-26 23:45:46,291] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:46,294] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 192ms (request req_01a17a9b1dca7b5a88e6d51291a17bd4)
+[ 2026-10-26 23:45:46,443] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:46,445] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 149ms (request req_01a17a9b1e8573ce88c4b216ba3e7c7d)
+[ 2026-10-26 23:45:46,610] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:46,611] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 165ms (request req_01a17a9b1f26785caa6271b6e8649f23)
+[ 2026-10-26 23:45:46,786] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:46,790] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 177ms (request req_01a17a9b1fbb718b817e8172f064b2c5)
+[ 2026-10-26 23:45:47,977] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:47,980] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 155ms (request req_01a17a9b247a77a0818551a52f4bee4c)
+[ 2026-10-26 23:45:48,127] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:48,128] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 147ms (request req_01a17a9b25187ad38dc96d8f3fb83173)
+[ 2026-10-26 23:45:48,291] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:48,295] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 165ms (request req_01a17a9b25b27b88a10b5feef9d772ef)
+[ 2026-10-26 23:45:48,444] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:48,446] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 150ms (request req_01a17a9b2651748f9412251cdfc2e5e7)
+[ 2026-10-26 23:45:48,592] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:48,596] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 147ms (request req_01a17a9b26e674cfa4223c8df221a7b4)
+[ 2026-10-26 23:45:58,045] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:58,046] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 156ms (request req_01a17a9b4bca79739572950a1e1cebb9)
+[ 2026-10-26 23:45:58,195] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:58,197] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 149ms (request req_01a17a9b4c6b74b283be984f0f3c5c81)
+[ 2026-10-26 23:45:58,357] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:58,359] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 160ms (request req_01a17a9b4d0f7316bdbf2f579f41f337)
+[ 2026-10-26 23:45:58,544] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:58,546] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 186ms (request req_01a17a9b4da27567b26434821e8cf962)
+[ 2026-10-26 23:45:58,696] 1085 httpx2 - INFO - HTTP Request: POST https://api.typesafe.ai/v1/systemone "HTTP/1.1 200 OK"
+[ 2026-10-26 23:45:58,698] 115 typesafe_sdk - INFO - POST https://api.typesafe.ai/v1/systemone <- 200 in 150ms (request req_01a17a9b4e6077ed85f553301dabba06)
+[ 2026-10-26 23:45:58,699] 66 root - INFO - Adverse Media research COMPLETED for M B C C (FOODS) LIMITED
+[ 2026-10-26 23:45:59,797] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-10-26 23:46:12,169] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-10-26 23:46:20,077] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-10-26 23:46:27,082] 51 root - ERROR - Industry Research FAILED for industry_names: ['Other retail sale of food in specialised stores']
+Traceback (most recent call last):
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\graph\nodes.py", line 44, in industry_research
+    industry_analysis = industry_research_agent.analyse_industries()
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\agents\industry_intelligence_agent.py", line 70, in analyse_industries
+    for result in search_output['results']:
+                  ~~~~~~~~~~~~~^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'

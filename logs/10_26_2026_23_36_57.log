@@ -1,0 +1,36 @@
+[ 2026-10-26 23:37:02,073] 18 root - INFO - Starting Company Research for company_number: SC196478
+[ 2026-10-26 23:37:02,827] 33 root - ERROR - Company Research FAILED for company_number: SC196478
+Traceback (most recent call last):
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\graph\nodes.py", line 23, in company_research
+    company_info = company_research_agent.research(COMPANY_NUMBER=company_number)
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\agents\company_research_agent.py", line 19, in research
+    company_profile = self._get_company_profile(COMPANY_NUMBER),
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\agents\company_research_agent.py", line 40, in _get_company_profile
+    incorporation_date = datetime.strptime(company_data['date_of_creation'], "%Y-%m-%d").date()
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'date_of_creation'
+[ 2026-10-26 23:38:30,117] 18 root - INFO - Starting Company Research for company_number: SC196478
+[ 2026-10-26 23:38:30,723] 33 root - ERROR - Company Research FAILED for company_number: SC196478
+Traceback (most recent call last):
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\graph\nodes.py", line 23, in company_research
+    company_info = company_research_agent.research(COMPANY_NUMBER=company_number)
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\agents\company_research_agent.py", line 19, in research
+    company_profile = self._get_company_profile(COMPANY_NUMBER),
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\agents\company_research_agent.py", line 40, in _get_company_profile
+    incorporation_date = datetime.strptime(company_data['date_of_creation'], "%Y-%m-%d").date()
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'date_of_creation'
+[ 2026-10-26 23:38:39,264] 18 root - INFO - Starting Company Research for company_number: SC196478
+[ 2026-10-26 23:38:39,808] 33 root - ERROR - Company Research FAILED for company_number: SC196478
+Traceback (most recent call last):
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\graph\nodes.py", line 23, in company_research
+    company_info = company_research_agent.research(COMPANY_NUMBER=company_number)
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\agents\company_research_agent.py", line 19, in research
+    company_profile = self._get_company_profile(COMPANY_NUMBER),
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\apaks\projects\RiskLens2\src\risklens2\agents\company_research_agent.py", line 40, in _get_company_profile
+    incorporation_date = datetime.strptime(company_data['date_of_creation'], "%Y-%m-%d").date()
+                                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'date_of_creation'

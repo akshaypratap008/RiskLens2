@@ -8,3 +8,4 @@ langchain-tavily
 typesafe-sdk
 pandas
 pytest
+streamlit

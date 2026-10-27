@@ -67,7 +67,7 @@ class IndustryIntelligenceAgent:
             filtered_results = []          # those tavily search results which have score above the treshold will be added to it
             
             # filter results based on tavily confidence score
-            for result in search_output['results']:
+            for result in search_output.get("results", {}):
                 if result['score'] >= TAVILY_THRESHOLD:
                     filtered_results.append(
                         {
