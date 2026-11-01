@@ -7,15 +7,19 @@ from risklens2.agents.media_agent import MediaAgent
 from risklens2.agents.industry_intelligence_agent import IndustryIntelligenceAgent
 from src.risklens2.utils import load_prompt
 from src.risklens2.graph.workflow import workflow
+from src.risklens2.credit_policy_rag.ingestion.chunker import CreditPolicyChunker
 
 from langgraph.types import Command
 
 import time
 import json
 from pathlib import Path
+import pickle
 
 COMPANY_NUMBER = "SC196478"
-
+CREDIT_POLICY_FILE_PATH = "data/credit_policy_extract_2.pdf"
+# ----------------------------------------------------------------------------
+# #AGENTS TESTING
 # start = time.time()
 # sample_company_data_path = Path("tests/sample_company.json")
 
@@ -81,40 +85,61 @@ COMPANY_NUMBER = "SC196478"
 # end = time.time()
 # print("RUN TIME: ", end-start)
 
-start = time.time()
-initial_state = {
-    "company_number": "SC196478"
-}
+# ----------------------------------------------------------------------------------
+# #WORKFLOW TESTING
 
-config = {"configurable": {"thread_id": 1}}
+# start = time.time()
+# initial_state = {
+#     "company_number": "SC196478"
+# }
 
-workflow.invoke(initial_state, config)
+# config = {"configurable": {"thread_id": 1}}
 
-final_state = workflow.invoke(
-    Command(
-        resume={
-            "revenue_cy": 15000000,
-            "revenue_py": 10000000,
-            "ebitda": 1200000,
-            "net_profit": 650000,
-            "cash": 450000,
-            "current_assets": 3200000,
-            "inventory": 750000,
-            "current_liabilities": 2200000,
-            "total_assets": 7800000,
-            "total_liabilities": 4800000,
-            "equity": 3000000,
-            "total_debt": 2500000,
-            "interest_expense": 180000
-        }
-    ), config=config
-)
-end = time.time()
+# workflow.invoke(initial_state, config)
 
-print(final_state)
-print()
-print("RUN TIME: ", end-start)
+# final_state = workflow.invoke(
+#     Command(
+#         resume={
+#             "revenue_cy": 15000000,
+#             "revenue_py": 10000000,
+#             "ebitda": 1200000,
+#             "net_profit": 650000,
+#             "cash": 450000,
+#             "current_assets": 3200000,
+#             "inventory": 750000,
+#             "current_liabilities": 2200000,
+#             "total_assets": 7800000,
+#             "total_liabilities": 4800000,
+#             "equity": 3000000,
+#             "total_debt": 2500000,
+#             "interest_expense": 180000
+#         }
+#     ), config=config
+# )
+# end = time.time()
 
+# print(final_state)
+# print()
+# print("RUN TIME: ", end-start)
 
+# -----------------------------------------------------------------------
+# #CHUNKER TESTING
+chunker = CreditPolicyChunker()
+
+# docling_doc = chunker.convert_to_doc(CREDIT_POLICY_FILE_PATH)
+# print(docling_doc)
+
+# with open("data/artifacts/docling_chunks.pkl", "rb") as file:
+#     docling_chunks = pickle.load(file)
+
+doc_doc = chunker.convert_to_doc(CREDIT_POLICY_FILE_PATH)
+
+chunks = chunker.create_chunks(doc = doc_doc)
+
+for chunk in chunks:
+    print(chunk)
+    print()
+
+print(len(chunks))
 
 

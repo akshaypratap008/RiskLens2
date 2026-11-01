@@ -1,0 +1,11 @@
+version: 1.0.0
+rag:
+  name: credit_policy_rag
+  chunker:
+    strategy: "hybrid"
+    
+    hybrid:
+      max_tokens: 400
+      merge_peers: true
+      repeat_table_header: true
+
