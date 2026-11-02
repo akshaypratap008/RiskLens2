@@ -7,7 +7,8 @@ from risklens2.agents.media_agent import MediaAgent
 from risklens2.agents.industry_intelligence_agent import IndustryIntelligenceAgent
 from src.risklens2.utils import load_prompt
 from src.risklens2.graph.workflow import workflow
-from src.risklens2.credit_policy_rag.ingestion.chunker import CreditPolicyChunker
+from src.risklens2.credit_policy_rag.components.chunker import CreditPolicyChunker
+from src.risklens2.credit_policy_rag.components.vector_store import VectorStore
 
 from langgraph.types import Command
 
@@ -132,14 +133,28 @@ chunker = CreditPolicyChunker()
 # with open("data/artifacts/docling_chunks.pkl", "rb") as file:
 #     docling_chunks = pickle.load(file)
 
-doc_doc = chunker.convert_to_doc(CREDIT_POLICY_FILE_PATH)
+# doc_doc = chunker.convert_to_doc(CREDIT_POLICY_FILE_PATH)
 
-chunks = chunker.create_chunks(doc = doc_doc)
+# chunks = chunker.create_chunks(doc = doc_doc)
 
-for chunk in chunks:
-    print(chunk)
-    print()
+# for chunk in chunks:
+#     print(type(chunk))
+#     print()
 
-print(len(chunks))
+# print(len(chunks))
+
+# with open("data/artifacts/credit_policy_chunks.pkl", "wb") as f:
+#     pickle.dump(chunks, f)
+
+with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
+    chunks = pickle.load(file)
+
+vector_store= VectorStore()
+
+query = "What is the minimum DSCR for hospitality lending?"
+
+results = vector_store.query_search_with_score(query=query)
+
+print(results)
 
 

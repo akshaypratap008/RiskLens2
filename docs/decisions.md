@@ -3,3 +3,7 @@ Synthetically generated credit policy covers everything from underwriting standa
 
 ## Chunking
 Used Docling for chunking so that the tables can be retained. Used HierarchicalChunker initially so that Hierarchy of the sections can also be retained. Will try Hybrid chunker also and check results
+
+## Vector store
+Since the credit policy doc is not big, will use chromadb persistent client at the moment. 
+If later other poclicy docs are added to the project, will move to Quadrant or other managed vector db

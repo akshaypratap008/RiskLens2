@@ -8,4 +8,10 @@ rag:
       max_tokens: 400
       merge_peers: true
       repeat_table_header: true
-
+  
+  vector_store:
+    db: chromadb
+    collection_name: credit_policy
+    persistant_dir: data/artifacts/chroma_db
+    embedding_model: text-embedding-3-small
+    top_k: 5

@@ -6,6 +6,7 @@ from docling.chunking import HierarchicalChunker, HybridChunker
 import uuid
 from pathlib import Path
 import yaml
+import pickle
 
 CREDIT_POLICY_FILE_PATH = "data/credit_policy_extract_2.pdf"
 RAG_CONFIG_FILE_PATH = Path(__file__).parents[1] / "rag_config.yaml"
@@ -106,6 +107,13 @@ class CreditPolicyChunker:
             for item in chunk.meta.doc_items
         })
         
+    def _save_chunks(self, chunks):
+        """saves the chunks to local disk"""
+        file_path = "data/artifacts/credit_policy_chunks.pkl"
+        with open(file_path, "wb") as file:
+            pickle.dump(file)
+
+        return None
 
     
     

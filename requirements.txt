@@ -9,3 +9,4 @@ typesafe-sdk
 pandas
 pytest
 streamlit
+chromadb
