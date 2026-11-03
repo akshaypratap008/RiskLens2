@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "chromadb>=1.5.9",
+    "deepeval>=4.3.2",
     "docling>=2.145.0",
     "dotenv>=0.9.9",
     "dotenv-python>=0.0.1",

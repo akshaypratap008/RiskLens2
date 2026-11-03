@@ -13,10 +13,11 @@ RAG_CONFIG_FILE_PATH = Path(__file__).parents[1] / "rag_config.yaml"
 with open(RAG_CONFIG_FILE_PATH, "r") as f:
     config = yaml.safe_load(f)
 
-COLLECTION_NAME = config['rag']['vector_store']['collection_name']
-VECTOR_STORE_PATH = config['rag']['vector_store']['persistant_dir']
-EMBEDDING_MODEL_NAME = config['rag']['vector_store']['embedding_model']
-TOP_K = config['rag']['vector_store']['top_k']      # top_k search results
+COLLECTION_NAME = config['rag']['vector_store']['chromadb']['collection_name']
+VECTOR_STORE_PATH = config['rag']['vector_store']['chromadb']['persistant_dir']
+EMBEDDING_MODEL_NAME = config['rag']['vector_store']['chromadb']['embedding_model']
+TOP_K = config['rag']['vector_store']['chromadb']['top_k']      # top_k search results
+COLLECTION_CONFIG = config['rag']['vector_store']['chromadb']['collection_configuration']           # collection_config is used to get the normalised similarity scores
 
 class VectorStore:
     """Vector store to store embeddings"""
@@ -29,7 +30,8 @@ class VectorStore:
         self.vector_store = Chroma(
             collection_name= COLLECTION_NAME,
             embedding_function= self.embeddings,
-            persist_directory= VECTOR_STORE_PATH
+            persist_directory= VECTOR_STORE_PATH,
+            collection_configuration=COLLECTION_CONFIG
         )
 
     def add_chunks(self, chunks:list):
@@ -46,7 +48,7 @@ class VectorStore:
 
     def query_search_with_score(self, query:str, top_k:int = TOP_K) -> list[dict]:
         """Searches the vector store. Returns a list of dic with content, metadata and score for each chunk"""
-        results = self.vector_store.similarity_search_with_score(
+        results = self.vector_store.similarity_search_with_relevance_scores(
             query=query,
             k = top_k
         )

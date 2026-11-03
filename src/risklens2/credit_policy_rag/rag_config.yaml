@@ -10,8 +10,26 @@ rag:
       repeat_table_header: true
   
   vector_store:
-    db: chromadb
-    collection_name: credit_policy
-    persistant_dir: data/artifacts/chroma_db
-    embedding_model: text-embedding-3-small
+    chromadb:
+      collection_name: credit_policy
+      persistant_dir: data/artifacts/chroma_db
+      embedding_model: text-embedding-3-small
+      top_k: 5
+      collection_configuration:
+        hnsw:
+          space: "cosine"
+
+  retriever:
     top_k: 5
+
+  evals:
+    goldens_folder_path: src\risklens2\credit_policy_rag\evals\goldens
+    eval_results_folder_path: src\risklens2\credit_policy_rag\evals\eval_results
+    retriever_eval:
+      dataset_name : credit_policy_extract_goldens.json
+      eval_metrics_parameters: 
+        threshold: 0.7
+        model: "gpt-4.1-mini"
+        include_reason: true
+      
+

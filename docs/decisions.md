@@ -7,3 +7,12 @@ Used Docling for chunking so that the tables can be retained. Used HierarchicalC
 ## Vector store
 Since the credit policy doc is not big, will use chromadb persistent client at the moment. 
 If later other poclicy docs are added to the project, will move to Quadrant or other managed vector db
+
+## Evals
+used deepeval
+to create a golden dataset, used claude with the below prompt
+```
+I am building a rag for this credit policy document. The rag agent will be used by credit analyst and other agents in the project to asses credit risk for a company. To evaluate the rag, I will be using deepeval. To evaluate the retriever, I will be using contextual precision and contextual recall based on deepeval documentation. I need a LLM test case which should include input (user query) and actual output(the real answer from the credit policy). 
+
+Can you build a LLM test case with 20 questions for me. Make sure the questions are realistic from a credit analyst perspective. Strictly make sure that the actual output is from the credit policy document provided.
+```

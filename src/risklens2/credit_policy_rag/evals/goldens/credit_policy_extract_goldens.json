@@ -1,0 +1,102 @@
+[
+  {
+    "input": "The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?",
+    "expected_output": "No. The mandatory eligibility criterion for trading history is at least 24 months for standard policy. An applicant with less than 24 months' trading history is routed to the Start-up policy (Section 31).",
+    "source_sections": ["6.1"]
+  },
+  {
+    "input": "One of the directors has an unsatisfied CCJ of £7k registered 18 months ago. Does the business meet eligibility, and is there an exception route?",
+    "expected_output": "It fails the credit history criterion, which requires no unsatisfied CCJs over £5k in the last 24 months (business or principals), no insolvency of principals in the last 6 years and no IVA in the last 3 years. The exception route is Senior Credit Manager, only if the CCJ is explained and satisfied. An application that fails a mandatory eligibility criterion must be declined or approved as a Policy Exception; it may not proceed to credit assessment as if eligible.",
+    "source_sections": ["6", "6.1"]
+  },
+  {
+    "input": "I'm assessing a restaurant group that has traded for 4 years. How does the policy treat hospitality and what specific conditions and stresses apply?",
+    "expected_output": "Hospitality (pubs, restaurants, hotels) is a Restricted sector because of high default rates and energy, labour and consumer-demand sensitivity. Sector conditions are: maximum senior leverage 2.5x, DSCR of at least 1.35x, and trading of at least 3 years. Restricted sectors require the sector conditions plus approval one authority level higher (Section 19). The hospitality-specific stress is revenue −25% (moderate), energy costs +50% and wages +8%.",
+    "source_sections": ["6.2", "6.3", "14.4"]
+  },
+  {
+    "input": "We've received an application from a payday / high-cost short-term lender. Can we lend to them with a policy exception?",
+    "expected_output": "No. Payday and high-cost short-term lenders are a Prohibited sector for conduct and reputational reasons. Prohibited sectors are outside appetite: the application must be declined and there is no exception route.",
+    "source_sections": ["6.2", "6.3"]
+  },
+  {
+    "input": "The applicant runs a chain of car washes. What additional requirements apply because of the sector?",
+    "expected_output": "Car washes fall within cash-intensive businesses, which are Restricted because of heightened money-laundering risk. Conditions are Enhanced Due Diligence and reconciliation of cash turnover to bank statements. As a Restricted sector, the application also needs approval one authority level higher (Section 19).",
+    "source_sections": ["6.2", "6.3"]
+  },
+  {
+    "input": "The borrower's largest customer represents 55% of revenue. What does the policy require?",
+    "expected_output": "Where one customer exceeds 30% of revenue, the application must assess that customer's creditworthiness, the contract terms and remaining tenor, and the cash-flow effect of losing that customer. Above 50%, Senior Credit Manager approval is required. Credit must decline where the business model depends on a single contract or customer above 50% of revenue without contractual protection beyond the loan tenor, unless approved by Senior Credit Manager. For the qualitative score, a largest customer above 30% is rated Weak (policy trigger).",
+    "source_sections": ["6.5", "13.3"]
+  },
+  {
+    "input": "What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?",
+    "expected_output": "DSCR is CFADS divided by scheduled principal plus interest plus lease payments. A DSCR of 1.5x or more is strong. The policy minimum is 1.25x (1.35x for hospitality). A DSCR below 1.10x is a decline outside policy.",
+    "source_sections": ["9.3", "10"]
+  },
+  {
+    "input": "What is the maximum senior debt to EBITDA we can lend to for cash-flow lending, and can it be exceeded?",
+    "expected_output": "Total senior debt to all lenders must not exceed 3.0x Normalised EBITDA as standard, and 2.5x for hospitality and Restricted sectors. With Central Credit Committee approval it can go to 3.5x, but never above 4.0x under this policy.",
+    "source_sections": ["9.3", "15.1"]
+  },
+  {
+    "input": "How do I calculate CFADS, and how should maintenance capex and owner drawings be set?",
+    "expected_output": "CFADS = Normalised EBITDA − Cash tax − Maintenance capex − ΔWorking capital − Sustainable owner drawings. Maintenance capex is the higher of (i) the 3-year average capex excluding identified growth capex and (ii) 50% of annual depreciation; growth capex funded by new debt is excluded. For companies, sustainable owner drawings are the dividends required to cover directors' personal living costs where salary has been normalised below that level, minimum £30k per working owner (illustrative). For sole traders and partners, use actual drawings, minimum £30k per working principal.",
+    "source_sections": ["10.2"]
+  },
+  {
+    "input": "The borrower has an RCF with us. How should the RCF be included in debt service when calculating DSCR?",
+    "expected_output": "Debt service includes all scheduled payments to all lenders over the next 12 months, including HP and lease rentals, the proposed facility on its contractual profile, and RCF interest assuming 50% average utilisation, or 100% if the RCF has historically been more than 75% utilised. Floating debt is taken at the current reference rate plus margin, plus the policy stress in Section 14.",
+    "source_sections": ["10.2"]
+  },
+  {
+    "input": "Management has given us a forecast showing strong EBITDA growth from a new contract that isn't signed yet. How much of it can we use in the credit case?",
+    "expected_output": "Credit must build its own bank case and must not approve on management forecasts alone. Unless revenue is contracted, the bank case must haircut forecast incremental EBITDA by at least 40% and assume no improvement in margin over the latest 12 months. Contracted revenue (a signed contract of at least the facility tenor, or 3 years if shorter, with a creditworthy counterparty) may be taken at 90%.",
+    "source_sections": ["10.3"]
+  },
+  {
+    "input": "What's the cap on EBITDA normalisation add-backs, and how are non-recurring legal costs treated?",
+    "expected_output": "Normalisation must be evidence-based, symmetrical and capped. Total add-backs must not exceed 15% of reported EBITDA without Senior Credit Manager approval, and 25% in any case. Non-recurring legal costs can be added back at a maximum of 50%, because litigation can recur; full add-back is allowed only if the matter is closed and evidenced.",
+    "source_sections": ["10.4"]
+  },
+  {
+    "input": "The MD pays himself well below market rate. How do I normalise owner remuneration — and what if it was above market instead?",
+    "expected_output": "Where owner remuneration is below market, deduct the shortfall by normalising to a market salary for the role using the bank's benchmark table, for example £100k–£130k for the MD of a £10m–£25m business (illustrative). Where it is above market, add back the excess up to a maximum of 50% of the excess, and only if a binding reduction is documented (board minute plus covenant).",
+    "source_sections": ["10.4"]
+  },
+  {
+    "input": "Which applications need a stress test, and what shocks are applied in the mild, moderate and severe scenarios?",
+    "expected_output": "Every application with TCE above £250k, and every Restricted-sector or grade 7–10 application at any size, must be stress tested on the bank case. Shocks apply together to the bank-case year in which debt service is highest (usually year 1 or 2) and are held for 12 months. Mild: revenue −10%, EBITDA margin −2 percentage points, +100bps on floating debt, no working-capital release from lower sales. Moderate: revenue −20%, margin −4 percentage points, +300bps, no release, debtor days +10. Severe: revenue −30%, margin −6 percentage points, +500bps, no release, debtor days +15, supplier credit −10 days.",
+    "source_sections": ["14", "14.1"]
+  },
+  {
+    "input": "What are the pass criteria for each stress scenario, and what happens if the borrower fails the mild stress?",
+    "expected_output": "Mild: stressed DSCR of at least 1.10x; if failed, decline or restructure (reduce the amount, extend tenor within asset life, or add equity). Moderate: stressed DSCR of at least 1.00x, or cash plus undrawn committed facilities covering at least 12 months of the CFADS shortfall; if failed, decline or restructure, and approval outside this requires a Policy Exception at Senior Credit Manager level. Severe: liquidity runway of at least 6 months and forced-sale security cover of at least 80% of Northbridge exposure (at least 100% for grades 7–8); if failed, reduce unsecured exposure, add security or guarantees, otherwise Senior Credit Manager approval with documented rationale.",
+    "source_sections": ["14.2"]
+  },
+  {
+    "input": "How much headroom do financial covenants need to have when we set them?",
+    "expected_output": "Base-case headroom must be at least 20% for leverage and DSCR covenants at the first test date, or 15% with Credit Manager approval. The mild stress must not breach any financial covenant in the first 12 months.",
+    "source_sections": ["14.3"]
+  },
+  {
+    "input": "For a grade 7 borrower in the Medium segment, what's the maximum unsecured exposure, and do personal guarantees count towards security?",
+    "expected_output": "The grade-adjusted unsecured limit for a grade 7 Medium-segment obligor is £500k. Unsecured exposure must also not exceed 0.5x Normalised EBITDA for grade 7. Unsecured exposure means exposure not covered by the forced-sale value of tangible security, and personal guarantees do not count as security for this limit.",
+    "source_sections": ["15.3"]
+  },
+  {
+    "input": "What's the maximum overdraft we can offer an SME, and is it different for seasonal businesses?",
+    "expected_output": "The overdraft maximum is the lower of 15% of annual turnover and £2m. For seasonal businesses with a monthly forecast, it is 20% of turnover and £3m.",
+    "source_sections": ["15.2"]
+  },
+  {
+    "input": "I'm looking at a seasonal farming business whose EBITDA swung by about 30% between two of the last three years. What does the policy require for the cash-flow assessment?",
+    "expected_output": "Seasonal businesses (agriculture, tourism, retail, construction) must provide a monthly cash-flow forecast, and peak debt must be covered by committed facilities with at least 15% headroom at the forecast peak. Where EBITDA has varied by more than 25% between any two of the last 3 years, CFADS must use the 3-year average or the latest year, whichever is lower.",
+    "source_sections": ["10.5"]
+  },
+  {
+    "input": "In the MGT Foods UK worked example, why were the facilities declined as requested, and what structure was approved instead?",
+    "expected_output": "The £2.0m term loan with £500k RCF, funded almost entirely by debt, failed the mild stress (DSCR 1.04x vs 1.10x) and the moderate and severe liquidity tests. Under Section 14.2 these failures require decline or restructure, and there is no exception route for a mild-stress failure. An amended structure was approved: a £1.75m term loan (7.5 years, 6 months interest-only then 84 monthly amortising instalments) funded alongside a £500k subordinated director loan, with a £500k RCF, at grade 6 within Senior Credit Manager (L5) authority, subject to the conditions precedent.",
+    "source_sections": ["43", "43.14", "43.15"]
+  }
+]

@@ -9,6 +9,8 @@ from src.risklens2.utils import load_prompt
 from src.risklens2.graph.workflow import workflow
 from src.risklens2.credit_policy_rag.components.chunker import CreditPolicyChunker
 from src.risklens2.credit_policy_rag.components.vector_store import VectorStore
+from src.risklens2.credit_policy_rag.components.retriever import Retriever
+from src.risklens2.credit_policy_rag.evals.retirever_eval import RetrieverEval
 
 from langgraph.types import Command
 
@@ -125,7 +127,7 @@ CREDIT_POLICY_FILE_PATH = "data/credit_policy_extract_2.pdf"
 
 # -----------------------------------------------------------------------
 # #CHUNKER TESTING
-chunker = CreditPolicyChunker()
+# chunker = CreditPolicyChunker()
 
 # docling_doc = chunker.convert_to_doc(CREDIT_POLICY_FILE_PATH)
 # print(docling_doc)
@@ -146,15 +148,46 @@ chunker = CreditPolicyChunker()
 # with open("data/artifacts/credit_policy_chunks.pkl", "wb") as f:
 #     pickle.dump(chunks, f)
 
+# #RETRIEVER TESTING - using vectorstore class
 with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
     chunks = pickle.load(file)
 
-vector_store= VectorStore()
+# vector_store= VectorStore()
 
-query = "What is the minimum DSCR for hospitality lending?"
+# query = "What is the minimum DSCR for hospitality lending?"
+# results = vector_store.query_search_with_score(query=query)
+# print(results)
 
-results = vector_store.query_search_with_score(query=query)
+# #RETRIEVER TESTING - using retriever class
+# query = "What is the minimum DSCR for hospitality lending?"
 
-print(results)
+# start = time.time()
+# with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
+#     chunks = pickle.load(file)
+
+# vector_store= VectorStore()
+# vector_store.add_chunks(chunks)
+# print("vector store build")
+
+# retriever = Retriever()
+# result = retriever.retrieve(query=query)
+# end = time.time()
+
+# print("------------RESULTS---------------")
+# print(result)
+# print()
+# print("run time:", end-start)
+
+# EVALS test
+start = time.time()
+evaluator = RetrieverEval(eval_description="normal-retriever")
+
+evaluator.run_evals()
+end = time.time()
+
+print("run time:", end-start)
+
+
+
 
 
