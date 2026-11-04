@@ -44,7 +44,13 @@ class RetrieverEval:
                     query = item['input']
                 )
 
-                retrieval_context = [result['content'] for result in actual_retrieval_output]
+                reranked_retrieved_output = self.retriever.rerank_docs(
+                    query= item['input'],
+                    results = actual_retrieval_output
+                )
+
+                retrieval_context = [result['content'] for result in reranked_retrieved_output]
+                
                 test_cases.append(LLMTestCase(
                     input = input,
                     actual_output= "generator not evaluated in this run",

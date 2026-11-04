@@ -19,7 +19,7 @@ rag:
           space: "cosine"
 
   retriever:
-    top_k: 5
+    top_k: 20
 
   evals:
     goldens_folder_path: src\risklens2\credit_policy_rag\evals\goldens
@@ -30,5 +30,9 @@ rag:
         threshold: 0.7
         model: "gpt-4.1-mini"
         include_reason: true
+  
+  reranker:
+    top_k: 5
+    model: "BAAI/bge-reranker-base" 
       
 

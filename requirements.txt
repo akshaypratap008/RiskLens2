@@ -10,3 +10,4 @@ pandas
 pytest
 streamlit
 chromadb
+sentence_transformers

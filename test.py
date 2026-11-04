@@ -180,7 +180,7 @@ with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
 
 # EVALS test
 start = time.time()
-evaluator = RetrieverEval(eval_description="normal-retriever")
+evaluator = RetrieverEval(eval_description="reranker retriever")
 
 evaluator.run_evals()
 end = time.time()
