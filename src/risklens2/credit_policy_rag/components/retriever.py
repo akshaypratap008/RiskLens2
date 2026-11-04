@@ -1,7 +1,10 @@
 from src.risklens2.credit_policy_rag.components.vector_store import VectorStore
+from src.risklens2.logger import logging
+from src.risklens2.exceptions import CustomException
 
 from pathlib import Path
 import yaml
+import sys
 
 RAG_CONFIG_FILE_PATH = Path(__file__).parents[1] / "rag_config.yaml"
 with open(RAG_CONFIG_FILE_PATH, "r") as f:
@@ -15,5 +18,13 @@ class Retriever:
         self.vector_store = VectorStore()
 
     def retrieve(self, query: str):
-        results = self.vector_store.query_search_with_score(query = query, top_k=TOP_K)
-        return results
+        """Retrieve top_k results for the query"""
+        try:
+            logging.info(f"Retrieval started for query: {query}")
+            results = self.vector_store.query_search_with_score(query = query, top_k=TOP_K)
+
+            logging.info(f"Retrieval completed for query: {query}")
+            return results
+        except Exception as e:
+            logging.exception(f"Retrieval failed for query: {query}")
+            raise CustomException(e, sys)

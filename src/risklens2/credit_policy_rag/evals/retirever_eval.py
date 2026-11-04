@@ -2,6 +2,7 @@ from pathlib import Path
 import yaml
 import json
 from dotenv import load_dotenv
+import sys
 
 from deepeval.test_case import LLMTestCase
 from deepeval.metrics import (ContextualPrecisionMetric, ContextualRecallMetric)
@@ -9,6 +10,8 @@ from deepeval import evaluate
 from deepeval.evaluate import DisplayConfig
 
 from src.risklens2.credit_policy_rag.components.retriever import Retriever
+from src.risklens2.logger import logging
+from src.risklens2.exceptions import CustomException
 
 load_dotenv()
 
@@ -29,54 +32,73 @@ class RetrieverEval:
         self.eval_description = eval_description
 
     def _build_test_cases(self) -> list[LLMTestCase]:
-        goldens_doc = self._load_goldens_json()
-        test_cases = []
-        for item in goldens_doc:
-            input = item['input']
-            expected_output = item['expected_output']
+        """Loads the golden dataset json file and creates testcases. Returns a list of testcases for evaluation"""
+        try:
+            goldens_doc = self._load_goldens_json()
+            test_cases = []
+            for item in goldens_doc:
+                input = item['input']
+                expected_output = item['expected_output']
 
-            actual_retrieval_output = self.retriever.retrieve(
-                query = item['input']
-            )
+                actual_retrieval_output = self.retriever.retrieve(
+                    query = item['input']
+                )
 
-            retrieval_context = [result['content'] for result in actual_retrieval_output]
-            test_cases.append(LLMTestCase(
-                input = input,
-                actual_output= "generator not evaluated in this run",
-                expected_output=expected_output,
-                retrieval_context=retrieval_context
-            ))
-        return test_cases
+                retrieval_context = [result['content'] for result in actual_retrieval_output]
+                test_cases.append(LLMTestCase(
+                    input = input,
+                    actual_output= "generator not evaluated in this run",
+                    expected_output=expected_output,
+                    retrieval_context=retrieval_context
+                ))
+            logging.info(f"Test cases build for {self.eval_description} evaluation")
+            return test_cases
+        except Exception as e:
+            logging.info(f"Failed to build test cases for {self.eval_description} evaluation")
+            raise CustomException(e, sys)
 
     def _load_goldens_json(dataset:str = DATSET_NAME):
         """loads the golden dataset and returns a python object which can be iterated"""
-        file_path = Path(GOLDENS_FOLDER_PATH) / DATSET_NAME
-        with open(file_path, 'rb') as file:
-            goldens = json.load(file)
-        return goldens
+
+        try:
+            file_path = Path(GOLDENS_FOLDER_PATH) / DATSET_NAME
+            with open(file_path, 'rb') as file:
+                goldens = json.load(file)
+            logging.info(f"Golden dataset {DATSET_NAME} loaded")
+            return goldens
+        except Exception as e:
+            logging.exception(f"Failed to load golden dataset {DATSET_NAME}")
+            raise CustomException(e, sys)
 
     def run_evals(self):
+        """Runs the evaluation pipeline. load golden dataset > build test cases > evaluate and store eval results"""
         test_cases = self._build_test_cases()
         metrics = [
             ContextualRecallMetric(**EVAL_METRICS_PARAMETERS),
             ContextualPrecisionMetric(**EVAL_METRICS_PARAMETERS)
         ]
 
-        result = evaluate(
-            test_cases=test_cases,
-            metrics=metrics,
-            hyperparameters={
-                "retriever": self.eval_description,
-                "chunker": config['rag']['chunker']['strategy'],
-                "embedding_model": config['rag']['vector_store']['chromadb']['embedding_model'],
-                "top_k": config['rag']['retriever']['top_k'],
-                "judge_model": config['rag']['evals']['retriever_eval']['eval_metrics_parameters']['model'],
-                "golden_dataset_name": config['rag']['evals']['retriever_eval']['dataset_name']
-            },
-            display_config=DisplayConfig(results_folder=EVAL_RESULTS_FOLDER)
-        )
+        try:
+            logging.info(f"Evaluation started for {self.eval_description}")
+            result = evaluate(
+                test_cases=test_cases,
+                metrics=metrics,
+                hyperparameters={
+                    "retriever": self.eval_description,
+                    "chunker": config['rag']['chunker']['strategy'],
+                    "embedding_model": config['rag']['vector_store']['chromadb']['embedding_model'],
+                    "top_k": config['rag']['retriever']['top_k'],
+                    "judge_model": config['rag']['evals']['retriever_eval']['eval_metrics_parameters']['model'],
+                    "golden_dataset_name": config['rag']['evals']['retriever_eval']['dataset_name']
+                },
+                display_config=DisplayConfig(results_folder=EVAL_RESULTS_FOLDER)
+            )
 
-        return result
+            logging.info(f"Evaluations completed for {self.eval_description}")
+            return result
+        except Exception as e:
+            logging.exception(f"Failed to complete evaluations for {self.eval_description}")
+            raise CustomException(e, sys)
 
 
 

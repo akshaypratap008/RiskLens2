@@ -14,7 +14,6 @@ rag:
       collection_name: credit_policy
       persistant_dir: data/artifacts/chroma_db
       embedding_model: text-embedding-3-small
-      top_k: 5
       collection_configuration:
         hnsw:
           space: "cosine"
