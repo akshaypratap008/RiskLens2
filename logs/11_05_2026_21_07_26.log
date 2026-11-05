@@ -1,0 +1,31 @@
+[ 2026-11-05 21:08:04,845] 40 root - INFO - Vector Store initialised
+[ 2026-11-05 21:08:04,872] 214 sentence_transformers.base.model - INFO - No device provided, using cpu
+[ 2026-11-05 21:08:05,584] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 21:08:05,591] 1199 sentence_transformers.base.model - INFO - No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+[ 2026-11-05 21:08:05,703] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:05,830] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 21:08:05,854] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:06,032] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 21:08:06,150] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 21:08:06,172] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:09,918] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 21:08:10,085] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 21:08:10,239] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 21:08:10,493] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 21:08:10,698] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 21:08:10,757] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:10,899] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 21:08:10,916] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:11,167] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 21:08:11,187] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:11,316] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 21:08:11,335] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:11,507] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-11-05 21:08:11,626] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:16,328] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:19,776] 29 root - INFO - Retrieval started for query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 21:08:19,777] 63 root - INFO - Searching vector store for query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 21:08:26,229] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 21:08:27,590] 79 root - INFO - Similarity search completed for the query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 21:08:27,591] 32 root - INFO - Retrieval completed for query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 21:08:49,567] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"

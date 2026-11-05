@@ -12,6 +12,7 @@ from src.risklens2.credit_policy_rag.components.vector_store import VectorStore
 from src.risklens2.credit_policy_rag.components.retriever import Retriever
 from src.risklens2.credit_policy_rag.evals.retirever_eval import RetrieverEval
 from src.risklens2.credit_policy_rag.components.generator import ResponseGenerator
+from src.risklens2.credit_policy_rag.rag_pipeline import RAGPipeline
 
 from langgraph.types import Command
 
@@ -189,24 +190,42 @@ with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
 # print("run time:", end-start)
 
 # #GENERATOR TEST
+# start = time.time()
+# query = "The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?"
+
+# rag = ResponseGenerator()
+# retriver = Retriever()
+
+# retrieved_docs = retriver.retrieve(query = query)
+
+# response = rag.generate_response(
+#     query= query,
+#     retrieved_results=retrieved_docs
+# )
+
+# end = time.time()
+# print(response)
+# print()
+# print("run time:", end-start)
+
+# #RAG PIPELINE TEST
 start = time.time()
-query = "The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?"
-
-rag = ResponseGenerator()
-retriver = Retriever()
-
-retrieved_docs = retriver.retrieve(query = query)
-
-response = rag.generate_response(
-    query= query,
-    retrieved_results=retrieved_docs
-)
+query = "What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?"
+rag_pipeline = RAGPipeline(query=query)
+rag_pipeline.run()
+# answer, sources = rag_pipeline.run()
+# print("ANSWER: ", answer)
+# print("-----------")
+# print("SOURCES: ", sources)
 
 end = time.time()
-print(response)
 print()
-print("run time:", end-start)
+print("RUN TIME: ", end-start)
 
 
 
-
+'''
+ANSWER:  The policy treats the hospitality sector, including restaurants, as having specific risks and key metrics for assconsumption, labor costs, and fluctuations in consumer demand, along with high failure rates in the sector. The key ratiosin, the fixed charge coverage ratio (FCCRC), and revenue per available room (RevPAR). Stress scenarios for hospitality invcosts by 50%, and wage increases of 8%. Excessive leverage is mitigated with a maximum senior leverage of 2.5x and a debt dditionally, to be eligible for lending, the entity must have a trading history of at least 3 years and show resilience toty to manage operational risks.
+-----------
+SOURCES:  [Source(pages=[19, 20], section='30. Sector-Specific Underwriting', source_doc='credit_policy_extract_2.pdf', churce(pages=[16], section='14.4 Sector-specific stresses', source_doc='credit_policy_extract_2.pdf', chunk_id='79f62457-1ee
+'''

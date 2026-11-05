@@ -23,7 +23,7 @@ class ResponseGenerator:
             model=LLM_MODEL
         ).with_structured_output(RAGResponse)
 
-    def generate_response(self, query:str, retrieved_results: list[dict]):
+    def generate_response(self, query:str, retrieved_results: list[dict]) -> RAGResponse:
         system_prompt, user_prompt = self._build_final_prompt(
             query = query,
             retrieved_results=retrieved_results
