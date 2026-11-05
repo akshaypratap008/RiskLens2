@@ -17,14 +17,13 @@ RERANKER_MODEL = config['rag']['reranker']['model']
 RERANKER_TOP_K = config['rag']['reranker']['top_k']
 
 
-
 class Retriever:
 
     def __init__(self):
         self.vector_store = VectorStore()
         self.reranker = CrossEncoder(RERANKER_MODEL)
 
-    def retrieve(self, query: str):
+    def retrieve(self, query: str) -> list[dict]:
         """Retrieve top_k results for the query"""
         try:
             logging.info(f"Retrieval started for query: {query}")

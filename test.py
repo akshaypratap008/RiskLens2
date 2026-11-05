@@ -11,6 +11,7 @@ from src.risklens2.credit_policy_rag.components.chunker import CreditPolicyChunk
 from src.risklens2.credit_policy_rag.components.vector_store import VectorStore
 from src.risklens2.credit_policy_rag.components.retriever import Retriever
 from src.risklens2.credit_policy_rag.evals.retirever_eval import RetrieverEval
+from src.risklens2.credit_policy_rag.components.generator import ResponseGenerator
 
 from langgraph.types import Command
 
@@ -178,15 +179,33 @@ with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
 # print()
 # print("run time:", end-start)
 
-# EVALS test
+# #RETRIEVAL EVALS test
+# start = time.time()
+# evaluator = RetrieverEval(eval_description="reranker retriever")
+
+# evaluator.run_evals()
+# end = time.time()
+
+# print("run time:", end-start)
+
+# #GENERATOR TEST
 start = time.time()
-evaluator = RetrieverEval(eval_description="reranker retriever")
+query = "The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?"
 
-evaluator.run_evals()
+rag = ResponseGenerator()
+retriver = Retriever()
+
+retrieved_docs = retriver.retrieve(query = query)
+
+response = rag.generate_response(
+    query= query,
+    retrieved_results=retrieved_docs
+)
+
 end = time.time()
-
+print(response)
+print()
 print("run time:", end-start)
-
 
 
 

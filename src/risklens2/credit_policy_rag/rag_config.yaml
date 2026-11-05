@@ -34,5 +34,9 @@ rag:
   reranker:
     top_k: 5
     model: "BAAI/bge-reranker-base" 
+
+  generator:
+    provider: "OpenAI"
+    model: "gpt-4o-mini"
       
 
