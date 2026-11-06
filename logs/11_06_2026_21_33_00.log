@@ -1,0 +1,87 @@
+[ 2026-11-06 21:33:36,827] 40 root - INFO - Vector Store initialised
+[ 2026-11-06 21:33:36,839] 214 sentence_transformers.base.model - INFO - No device provided, using cpu
+[ 2026-11-06 21:33:37,526] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+[ 2026-11-06 21:33:37,533] 1199 sentence_transformers.base.model - INFO - No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+[ 2026-11-06 21:33:37,653] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:37,804] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-06 21:33:37,838] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:37,987] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-06 21:33:38,112] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-06 21:33:38,142] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:42,166] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-06 21:33:42,290] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-06 21:33:42,426] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-06 21:33:42,554] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-06 21:33:42,665] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-06 21:33:42,689] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:42,800] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-06 21:33:42,822] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:42,944] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-06 21:33:42,971] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:43,102] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-06 21:33:43,128] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:43,297] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-11-06 21:33:43,428] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:47,365] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-11-06 21:33:48,026] 73 root - INFO - Golden dataset credit_policy_extract_goldens.json loaded
+[ 2026-11-06 21:33:48,027] 29 root - INFO - Retrieval started for query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+[ 2026-11-06 21:33:48,027] 63 root - INFO - Searching vector store for query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+[ 2026-11-06 21:33:49,106] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+[ 2026-11-06 21:33:49,110] 1237 openai._base_client - INFO - Retrying request in 0.384593 seconds (retry 1 of 2)
+[ 2026-11-06 21:33:49,785] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+[ 2026-11-06 21:33:49,786] 1237 openai._base_client - INFO - Retrying request in 0.902081 seconds (retry 2 of 2)
+[ 2026-11-06 21:33:50,795] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 429 Too Many Requests"
+[ 2026-11-06 21:33:50,797] 82 root - INFO - Failed to complete similarity search for query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+[ 2026-11-06 21:33:50,798] 35 root - ERROR - Retrieval failed for query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+Traceback (most recent call last):
+  File "c:\Users\apaks\projects\RiskLens2\src\risklens2\credit_policy_rag\components\vector_store.py", line 64, in query_search_with_score
+    results = self.vector_store.similarity_search_with_relevance_scores(
+        query=query,
+        k = top_k
+    )
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 529, in similarity_search_with_relevance_scores
+    docs_and_similarities = self._similarity_search_with_relevance_scores(
+        query, k=k, **kwargs
+    )
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\langchain_core\vectorstores\base.py", line 475, in _similarity_search_with_relevance_scores
+    docs_and_scores = self.similarity_search_with_score(query, k, **kwargs)
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\langchain_chroma\vectorstores.py", line 848, in similarity_search_with_score
+    query_embedding = self._embedding_function.embed_query(query)
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\langchain_openai\embeddings\base.py", line 807, in embed_query
+    return self.embed_documents([text], **kwargs)[0]
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\langchain_openai\embeddings\base.py", line 757, in embed_documents
+    return self._get_len_safe_embeddings(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        texts, engine=engine, chunk_size=chunk_size, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\langchain_openai\embeddings\base.py", line 624, in _get_len_safe_embeddings
+    response = self.client.create(input=batch_tokens, **client_kwargs)
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\openai\resources\embeddings.py", line 113, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/embeddings",
+        ^^^^^^^^^^^^^^
+    ...<9 lines>...
+        cast_to=CreateEmbeddingResponse,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\openai\_base_client.py", line 1440, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\apaks\projects\RiskLens2\.venv\Lib\site-packages\openai\_base_client.py", line 1213, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\apaks\projects\RiskLens2\src\risklens2\credit_policy_rag\components\retriever.py", line 30, in retrieve
+    results = self.vector_store.query_search_with_score(query = query, top_k=RETRIEVR_TOP_K)
+  File "c:\Users\apaks\projects\RiskLens2\src\risklens2\credit_policy_rag\components\vector_store.py", line 83, in query_search_with_score
+    raise CustomException(e, sys)
+src.risklens2.exceptions.CustomException: Error occured in python script name [c:\Users\apaks\projects\RiskLens2\src\risklens2\credit_policy_rag\components\vector_store.py], line number [64], error message [Error code: 429 - {'error': {'message': 'You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/.', 'type': 'insufficient_quota', 'param': None, 'code': 'credit_balance_exhausted'}}]
+[ 2026-11-06 21:33:50,896] 63 root - INFO - Failed to build test cases for reranker retriever evaluation

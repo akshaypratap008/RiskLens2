@@ -16,12 +16,30 @@ I am building a rag for this credit policy document. The rag agent will be used 
 
 Can you build a LLM test case with 20 questions for me. Make sure the questions are realistic from a credit analyst perspective. Strictly make sure that the actual output is from the credit policy document provided.
 ```
-Eval results with normal retriever :
+Eval results with 20 test cases
+With normal retriever :
 recall : 0.97
 precission: 0.79
+top_k_retriever: 20, top_k_retriever:5
 
-Eval results with reranker added:
+With reranker added:
 recall: 0.95
 precission: 0.96
+top_k_retriever: 20, top_k_retriever:5
 
 Seems good imporvement after adding reranker. Will test different k values in future to optimise it more. For now, added reranker in retriever by default. 
+------
+Eval results with 60 test cases:
+reranker results
+recall: 0.91
+precisiion: 0.88
+top_k_retriever: 20, top_k_retriever:5
+
+recall: 0.91
+precisiion: 0.89
+top_k_retriever: 10, top_k_retriever:5
+
+recall: 0.90
+precisiion: 0.89
+top_k_retriever: 10, top_k_retriever:6
+

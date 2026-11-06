@@ -181,13 +181,13 @@ with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
 # print("run time:", end-start)
 
 # #RETRIEVAL EVALS test
-# start = time.time()
-# evaluator = RetrieverEval(eval_description="reranker retriever")
+start = time.time()
+evaluator = RetrieverEval(eval_description="reranker retriever")
 
-# evaluator.run_evals()
-# end = time.time()
+evaluator.run_evals()
+end = time.time()
 
-# print("run time:", end-start)
+print("run time:", end-start)
 
 # #GENERATOR TEST
 # start = time.time()
@@ -209,18 +209,18 @@ with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
 # print("run time:", end-start)
 
 # #RAG PIPELINE TEST
-start = time.time()
-query = "What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?"
-rag_pipeline = RAGPipeline(query=query)
-rag_pipeline.run()
-# answer, sources = rag_pipeline.run()
-# print("ANSWER: ", answer)
-# print("-----------")
-# print("SOURCES: ", sources)
+# start = time.time()
+# query = "What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?"
+# rag_pipeline = RAGPipeline(query=query)
+# rag_pipeline.run()
+# # answer, sources = rag_pipeline.run()
+# # print("ANSWER: ", answer)
+# # print("-----------")
+# # print("SOURCES: ", sources)
 
-end = time.time()
-print()
-print("RUN TIME: ", end-start)
+# end = time.time()
+# print()
+# print("RUN TIME: ", end-start)
 
 
 

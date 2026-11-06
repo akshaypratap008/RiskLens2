@@ -1,0 +1,631 @@
+[ 2026-11-05 23:14:03,469] 40 root - INFO - Vector Store initialised
+[ 2026-11-05 23:14:03,475] 214 sentence_transformers.base.model - INFO - No device provided, using cpu
+[ 2026-11-05 23:14:04,206] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/modules.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 23:14:04,214] 1199 sentence_transformers.base.model - INFO - No modules.json found for BAAI/bge-reranker-base, initializing a new CrossEncoder model.
+[ 2026-11-05 23:14:04,412] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:04,524] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 23:14:04,542] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:04,672] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 23:14:04,780] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 23:14:04,798] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:15,323] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 23:14:15,443] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 23:14:15,552] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 23:14:15,674] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+[ 2026-11-05 23:14:15,792] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 23:14:15,812] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:15,944] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 23:14:15,969] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:16,159] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 23:14:16,174] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:16,288] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/BAAI/bge-reranker-base/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[ 2026-11-05 23:14:16,307] 1025 httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/BAAI/bge-reranker-base/2cfc18c9415c912f9d8155881c133215df768a70/tokenizer_config.json "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:16,545] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[ 2026-11-05 23:14:16,664] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:35,413] 1025 httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/BAAI/bge-reranker-base "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:36,012] 73 root - INFO - Golden dataset credit_policy_extract_goldens.json loaded
+[ 2026-11-05 23:14:36,012] 29 root - INFO - Retrieval started for query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+[ 2026-11-05 23:14:36,012] 63 root - INFO - Searching vector store for query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+[ 2026-11-05 23:14:41,095] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:14:42,152] 79 root - INFO - Similarity search completed for the query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+[ 2026-11-05 23:14:42,153] 32 root - INFO - Retrieval completed for query: The applicant is a UK limited company that has been trading for 18 months. Can it be assessed under the standard SME credit policy?
+[ 2026-11-05 23:15:01,539] 29 root - INFO - Retrieval started for query: What's the minimum turnover requirement for a term loan applicant? Does it also apply to a small overdraft?
+[ 2026-11-05 23:15:01,540] 63 root - INFO - Searching vector store for query: What's the minimum turnover requirement for a term loan applicant? Does it also apply to a small overdraft?
+[ 2026-11-05 23:15:02,512] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:15:02,533] 79 root - INFO - Similarity search completed for the query: What's the minimum turnover requirement for a term loan applicant? Does it also apply to a small overdraft?
+[ 2026-11-05 23:15:02,533] 32 root - INFO - Retrieval completed for query: What's the minimum turnover requirement for a term loan applicant? Does it also apply to a small overdraft?
+[ 2026-11-05 23:15:20,195] 29 root - INFO - Retrieval started for query: Which owners do we need to identify and verify for ownership transparency?
+[ 2026-11-05 23:15:20,195] 63 root - INFO - Searching vector store for query: Which owners do we need to identify and verify for ownership transparency?
+[ 2026-11-05 23:15:20,427] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:15:20,439] 79 root - INFO - Similarity search completed for the query: Which owners do we need to identify and verify for ownership transparency?
+[ 2026-11-05 23:15:20,439] 32 root - INFO - Retrieval completed for query: Which owners do we need to identify and verify for ownership transparency?
+[ 2026-11-05 23:15:37,435] 29 root - INFO - Retrieval started for query: How quickly do financial statements have to be spread, and who can do the spreading?
+[ 2026-11-05 23:15:37,435] 63 root - INFO - Searching vector store for query: How quickly do financial statements have to be spread, and who can do the spreading?
+[ 2026-11-05 23:15:37,682] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:15:37,689] 79 root - INFO - Similarity search completed for the query: How quickly do financial statements have to be spread, and who can do the spreading?
+[ 2026-11-05 23:15:37,689] 32 root - INFO - Retrieval completed for query: How quickly do financial statements have to be spread, and who can do the spreading?
+[ 2026-11-05 23:15:52,419] 29 root - INFO - Retrieval started for query: How many years of financials do I need to show in the financial analysis, and what else needs to be included?
+[ 2026-11-05 23:15:52,420] 63 root - INFO - Searching vector store for query: How many years of financials do I need to show in the financial analysis, and what else needs to be included?
+[ 2026-11-05 23:15:52,666] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:15:52,680] 79 root - INFO - Similarity search completed for the query: How many years of financials do I need to show in the financial analysis, and what else needs to be included?
+[ 2026-11-05 23:15:52,680] 32 root - INFO - Retrieval completed for query: How many years of financials do I need to show in the financial analysis, and what else needs to be included?
+[ 2026-11-05 23:16:08,064] 29 root - INFO - Retrieval started for query: How are sectors classified for appetite, and how often is the classification refreshed?
+[ 2026-11-05 23:16:08,064] 63 root - INFO - Searching vector store for query: How are sectors classified for appetite, and how often is the classification refreshed?
+[ 2026-11-05 23:16:08,417] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:16:08,467] 79 root - INFO - Similarity search completed for the query: How are sectors classified for appetite, and how often is the classification refreshed?
+[ 2026-11-05 23:16:08,467] 32 root - INFO - Retrieval completed for query: How are sectors classified for appetite, and how often is the classification refreshed?
+[ 2026-11-05 23:16:24,720] 29 root - INFO - Retrieval started for query: What are the limits on business credit cards for a single customer?
+[ 2026-11-05 23:16:24,721] 63 root - INFO - Searching vector store for query: What are the limits on business credit cards for a single customer?
+[ 2026-11-05 23:16:25,038] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:16:25,055] 79 root - INFO - Similarity search completed for the query: What are the limits on business credit cards for a single customer?
+[ 2026-11-05 23:16:25,056] 32 root - INFO - Retrieval completed for query: What are the limits on business credit cards for a single customer?
+[ 2026-11-05 23:16:41,795] 29 root - INFO - Retrieval started for query: Who sets the sector risk score for an obligor, and can the RM change it if the client is different from its sector?
+[ 2026-11-05 23:16:41,795] 63 root - INFO - Searching vector store for query: Who sets the sector risk score for an obligor, and can the RM change it if the client is different from its sector?
+[ 2026-11-05 23:16:42,062] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:16:42,071] 79 root - INFO - Similarity search completed for the query: Who sets the sector risk score for an obligor, and can the RM change it if the client is different from its sector?
+[ 2026-11-05 23:16:42,071] 32 root - INFO - Retrieval completed for query: Who sets the sector risk score for an obligor, and can the RM change it if the client is different from its sector?
+[ 2026-11-05 23:16:59,119] 29 root - INFO - Retrieval started for query: When do I have to use the credit memo template, and can I drop sections that aren't relevant?
+[ 2026-11-05 23:16:59,119] 63 root - INFO - Searching vector store for query: When do I have to use the credit memo template, and can I drop sections that aren't relevant?
+[ 2026-11-05 23:16:59,349] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:16:59,355] 79 root - INFO - Similarity search completed for the query: When do I have to use the credit memo template, and can I drop sections that aren't relevant?
+[ 2026-11-05 23:16:59,355] 32 root - INFO - Retrieval completed for query: When do I have to use the credit memo template, and can I drop sections that aren't relevant?
+[ 2026-11-05 23:17:16,639] 29 root - INFO - Retrieval started for query: The applicant doesn't bank with us. Do they need to move their operating account to Northbridge?
+[ 2026-11-05 23:17:16,639] 63 root - INFO - Searching vector store for query: The applicant doesn't bank with us. Do they need to move their operating account to Northbridge?
+[ 2026-11-05 23:17:16,903] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:17:16,913] 79 root - INFO - Similarity search completed for the query: The applicant doesn't bank with us. Do they need to move their operating account to Northbridge?
+[ 2026-11-05 23:17:16,913] 32 root - INFO - Retrieval completed for query: The applicant doesn't bank with us. Do they need to move their operating account to Northbridge?
+[ 2026-11-05 23:17:34,192] 29 root - INFO - Retrieval started for query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 23:17:34,193] 63 root - INFO - Searching vector store for query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 23:17:34,470] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:17:34,501] 79 root - INFO - Similarity search completed for the query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 23:17:34,502] 32 root - INFO - Retrieval completed for query: What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?
+[ 2026-11-05 23:17:50,722] 29 root - INFO - Retrieval started for query: What is the maximum senior debt to EBITDA for cash-flow lending?
+[ 2026-11-05 23:17:50,722] 63 root - INFO - Searching vector store for query: What is the maximum senior debt to EBITDA for cash-flow lending?
+[ 2026-11-05 23:17:50,996] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:17:51,005] 79 root - INFO - Similarity search completed for the query: What is the maximum senior debt to EBITDA for cash-flow lending?
+[ 2026-11-05 23:17:51,005] 32 root - INFO - Retrieval completed for query: What is the maximum senior debt to EBITDA for cash-flow lending?
+[ 2026-11-05 23:18:07,154] 29 root - INFO - Retrieval started for query: What are the maximum LTVs for property lending — owner-occupied, investment and development?
+[ 2026-11-05 23:18:07,154] 63 root - INFO - Searching vector store for query: What are the maximum LTVs for property lending — owner-occupied, investment and development?
+[ 2026-11-05 23:18:07,361] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:18:07,367] 79 root - INFO - Similarity search completed for the query: What are the maximum LTVs for property lending — owner-occupied, investment and development?
+[ 2026-11-05 23:18:07,367] 32 root - INFO - Retrieval completed for query: What are the maximum LTVs for property lending — owner-occupied, investment and development?
+[ 2026-11-05 23:18:24,421] 29 root - INFO - Retrieval started for query: What level of interest cover triggers a warning, and at what level is it a decline?
+[ 2026-11-05 23:18:24,421] 63 root - INFO - Searching vector store for query: What level of interest cover triggers a warning, and at what level is it a decline?
+[ 2026-11-05 23:18:24,746] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:18:24,759] 79 root - INFO - Similarity search completed for the query: What level of interest cover triggers a warning, and at what level is it a decline?
+[ 2026-11-05 23:18:24,760] 32 root - INFO - Retrieval completed for query: What level of interest cover triggers a warning, and at what level is it a decline?
+[ 2026-11-05 23:18:41,671] 29 root - INFO - Retrieval started for query: What's the maximum overdraft we can offer an SME, and is it different for seasonal businesses?
+[ 2026-11-05 23:18:41,671] 63 root - INFO - Searching vector store for query: What's the maximum overdraft we can offer an SME, and is it different for seasonal businesses?
+[ 2026-11-05 23:18:41,914] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:18:41,920] 79 root - INFO - Similarity search completed for the query: What's the maximum overdraft we can offer an SME, and is it different for seasonal businesses?
+[ 2026-11-05 23:18:41,920] 32 root - INFO - Retrieval completed for query: What's the maximum overdraft we can offer an SME, and is it different for seasonal businesses?
+[ 2026-11-05 23:18:59,077] 29 root - INFO - Retrieval started for query: For a grade 7 borrower in the Medium segment, what's the maximum unsecured exposure, and do personal guarantees count towards security?
+[ 2026-11-05 23:18:59,077] 63 root - INFO - Searching vector store for query: For a grade 7 borrower in the Medium segment, what's the maximum unsecured exposure, and do personal guarantees count towards security?
+[ 2026-11-05 23:18:59,306] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:18:59,312] 79 root - INFO - Similarity search completed for the query: For a grade 7 borrower in the Medium segment, what's the maximum unsecured exposure, and do personal guarantees count towards security?
+[ 2026-11-05 23:18:59,312] 32 root - INFO - Retrieval completed for query: For a grade 7 borrower in the Medium segment, what's the maximum unsecured exposure, and do personal guarantees count towards security?
+[ 2026-11-05 23:19:15,939] 29 root - INFO - Retrieval started for query: What are the warning thresholds for the current ratio and quick ratio?
+[ 2026-11-05 23:19:15,939] 63 root - INFO - Searching vector store for query: What are the warning thresholds for the current ratio and quick ratio?
+[ 2026-11-05 23:19:16,171] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:19:16,176] 79 root - INFO - Similarity search completed for the query: What are the warning thresholds for the current ratio and quick ratio?
+[ 2026-11-05 23:19:16,176] 32 root - INFO - Retrieval completed for query: What are the warning thresholds for the current ratio and quick ratio?
+[ 2026-11-05 23:19:33,078] 29 root - INFO - Retrieval started for query: Debtor days have gone from 52 to 70 this year. Is that a warning under the policy?
+[ 2026-11-05 23:19:33,078] 63 root - INFO - Searching vector store for query: Debtor days have gone from 52 to 70 this year. Is that a warning under the policy?
+[ 2026-11-05 23:19:33,390] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:19:33,402] 79 root - INFO - Similarity search completed for the query: Debtor days have gone from 52 to 70 this year. Is that a warning under the policy?
+[ 2026-11-05 23:19:33,403] 32 root - INFO - Retrieval completed for query: Debtor days have gone from 52 to 70 this year. Is that a warning under the policy?
+[ 2026-11-05 23:19:50,178] 29 root - INFO - Retrieval started for query: How much headroom do financial covenants need to have when we set them?
+[ 2026-11-05 23:19:50,178] 63 root - INFO - Searching vector store for query: How much headroom do financial covenants need to have when we set them?
+[ 2026-11-05 23:19:50,427] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:19:50,434] 79 root - INFO - Similarity search completed for the query: How much headroom do financial covenants need to have when we set them?
+[ 2026-11-05 23:19:50,434] 32 root - INFO - Retrieval completed for query: How much headroom do financial covenants need to have when we set them?
+[ 2026-11-05 23:20:05,418] 29 root - INFO - Retrieval started for query: Does the minimum DSCR change depending on whether it's a refinancing, a capex loan, an acquisition or a start-up?
+[ 2026-11-05 23:20:05,418] 63 root - INFO - Searching vector store for query: Does the minimum DSCR change depending on whether it's a refinancing, a capex loan, an acquisition or a start-up?
+[ 2026-11-05 23:20:05,885] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:20:05,900] 79 root - INFO - Similarity search completed for the query: Does the minimum DSCR change depending on whether it's a refinancing, a capex loan, an acquisition or a start-up?
+[ 2026-11-05 23:20:05,900] 32 root - INFO - Retrieval completed for query: Does the minimum DSCR change depending on whether it's a refinancing, a capex loan, an acquisition or a start-up?
+[ 2026-11-05 23:20:21,608] 29 root - INFO - Retrieval started for query: One of the directors has an unsatisfied CCJ of £7k registered 18 months ago. Does the business meet eligibility, and is there an exception route?
+[ 2026-11-05 23:20:21,609] 63 root - INFO - Searching vector store for query: One of the directors has an unsatisfied CCJ of £7k registered 18 months ago. Does the business meet eligibility, and is there an exception route?
+[ 2026-11-05 23:20:21,914] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:20:21,926] 79 root - INFO - Similarity search completed for the query: One of the directors has an unsatisfied CCJ of £7k registered 18 months ago. Does the business meet eligibility, and is there an exception route?
+[ 2026-11-05 23:20:21,927] 32 root - INFO - Retrieval completed for query: One of the directors has an unsatisfied CCJ of £7k registered 18 months ago. Does the business meet eligibility, and is there an exception route?
+[ 2026-11-05 23:20:38,783] 29 root - INFO - Retrieval started for query: We've received an application from a payday / high-cost short-term lender. Can we lend to them with a policy exception?
+[ 2026-11-05 23:20:38,784] 63 root - INFO - Searching vector store for query: We've received an application from a payday / high-cost short-term lender. Can we lend to them with a policy exception?
+[ 2026-11-05 23:20:39,188] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:20:39,202] 79 root - INFO - Similarity search completed for the query: We've received an application from a payday / high-cost short-term lender. Can we lend to them with a policy exception?
+[ 2026-11-05 23:20:39,202] 32 root - INFO - Retrieval completed for query: We've received an application from a payday / high-cost short-term lender. Can we lend to them with a policy exception?
+[ 2026-11-05 23:20:55,789] 29 root - INFO - Retrieval started for query: The company's accounts at Companies House are 6 weeks overdue. Can we still proceed?
+[ 2026-11-05 23:20:55,789] 63 root - INFO - Searching vector store for query: The company's accounts at Companies House are 6 weeks overdue. Can we still proceed?
+[ 2026-11-05 23:20:56,080] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:20:56,088] 79 root - INFO - Similarity search completed for the query: The company's accounts at Companies House are 6 weeks overdue. Can we still proceed?
+[ 2026-11-05 23:20:56,088] 32 root - INFO - Retrieval completed for query: The company's accounts at Companies House are 6 weeks overdue. Can we still proceed?
+[ 2026-11-05 23:21:12,679] 29 root - INFO - Retrieval started for query: The borrower has HMRC arrears but is on a Time to Pay arrangement. Are they still eligible?
+[ 2026-11-05 23:21:12,679] 63 root - INFO - Searching vector store for query: The borrower has HMRC arrears but is on a Time to Pay arrangement. Are they still eligible?
+[ 2026-11-05 23:21:14,482] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:21:14,489] 79 root - INFO - Similarity search completed for the query: The borrower has HMRC arrears but is on a Time to Pay arrangement. Are they still eligible?
+[ 2026-11-05 23:21:14,489] 32 root - INFO - Retrieval completed for query: The borrower has HMRC arrears but is on a Time to Pay arrangement. Are they still eligible?
+[ 2026-11-05 23:21:30,089] 29 root - INFO - Retrieval started for query: The client hasn't provided all the financial information yet, but the RM wants to start the credit assessment. Is there an exception?
+[ 2026-11-05 23:21:30,089] 63 root - INFO - Searching vector store for query: The client hasn't provided all the financial information yet, but the RM wants to start the credit assessment. Is there an exception?
+[ 2026-11-05 23:21:30,318] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:21:30,323] 79 root - INFO - Similarity search completed for the query: The client hasn't provided all the financial information yet, but the RM wants to start the credit assessment. Is there an exception?
+[ 2026-11-05 23:21:30,323] 32 root - INFO - Retrieval completed for query: The client hasn't provided all the financial information yet, but the RM wants to start the credit assessment. Is there an exception?
+[ 2026-11-05 23:21:46,627] 29 root - INFO - Retrieval started for query: Part of the requested term loan is to fund a dividend to shareholders. Is that an acceptable purpose?
+[ 2026-11-05 23:21:46,628] 63 root - INFO - Searching vector store for query: Part of the requested term loan is to fund a dividend to shareholders. Is that an acceptable purpose?
+[ 2026-11-05 23:21:46,901] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:21:46,910] 79 root - INFO - Similarity search completed for the query: Part of the requested term loan is to fund a dividend to shareholders. Is that an acceptable purpose?
+[ 2026-11-05 23:21:46,911] 32 root - INFO - Retrieval completed for query: Part of the requested term loan is to fund a dividend to shareholders. Is that an acceptable purpose?
+[ 2026-11-05 23:22:02,555] 29 root - INFO - Retrieval started for query: The mild stress DSCR comes out at 1.05x. Can we approve it as a policy exception?
+[ 2026-11-05 23:22:02,555] 63 root - INFO - Searching vector store for query: The mild stress DSCR comes out at 1.05x. Can we approve it as a policy exception?
+[ 2026-11-05 23:22:02,840] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:22:02,853] 79 root - INFO - Similarity search completed for the query: The mild stress DSCR comes out at 1.05x. Can we approve it as a policy exception?
+[ 2026-11-05 23:22:02,853] 32 root - INFO - Retrieval completed for query: The mild stress DSCR comes out at 1.05x. Can we approve it as a policy exception?
+[ 2026-11-05 23:22:17,459] 29 root - INFO - Retrieval started for query: The Sector Guide benchmark is stricter than the general Section 9 warning threshold. Which one applies, and can we approve if we breach a Sector Guide requirement?
+[ 2026-11-05 23:22:17,459] 63 root - INFO - Searching vector store for query: The Sector Guide benchmark is stricter than the general Section 9 warning threshold. Which one applies, and can we approve if we breach a Sector Guide requirement?
+[ 2026-11-05 23:22:17,911] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:22:17,925] 79 root - INFO - Similarity search completed for the query: The Sector Guide benchmark is stricter than the general Section 9 warning threshold. Which one applies, and can we approve if we breach a Sector Guide requirement?
+[ 2026-11-05 23:22:17,926] 32 root - INFO - Retrieval completed for query: The Sector Guide benchmark is stricter than the general Section 9 warning threshold. Which one applies, and can we approve if we breach a Sector Guide requirement?
+[ 2026-11-05 23:22:34,342] 29 root - INFO - Retrieval started for query: Existing customer, banked with us for 2 years, had a returned direct debit last month. Does that affect eligibility?
+[ 2026-11-05 23:22:34,343] 63 root - INFO - Searching vector store for query: Existing customer, banked with us for 2 years, had a returned direct debit last month. Does that affect eligibility?
+[ 2026-11-05 23:22:34,595] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:22:34,601] 79 root - INFO - Similarity search completed for the query: Existing customer, banked with us for 2 years, had a returned direct debit last month. Does that affect eligibility?
+[ 2026-11-05 23:22:34,601] 32 root - INFO - Retrieval completed for query: Existing customer, banked with us for 2 years, had a returned direct debit last month. Does that affect eligibility?
+[ 2026-11-05 23:22:51,375] 29 root - INFO - Retrieval started for query: The applicant is incorporated in Ireland but has a UK branch. Can we make an exception and lend under SME policy?
+[ 2026-11-05 23:22:51,375] 63 root - INFO - Searching vector store for query: The applicant is incorporated in Ireland but has a UK branch. Can we make an exception and lend under SME policy?
+[ 2026-11-05 23:22:51,663] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:22:51,680] 79 root - INFO - Similarity search completed for the query: The applicant is incorporated in Ireland but has a UK branch. Can we make an exception and lend under SME policy?
+[ 2026-11-05 23:22:51,681] 32 root - INFO - Retrieval completed for query: The applicant is incorporated in Ireland but has a UK branch. Can we make an exception and lend under SME policy?
+[ 2026-11-05 23:23:08,597] 29 root - INFO - Retrieval started for query: The borrower's largest customer represents 55% of revenue. What does the policy require and who needs to approve?
+[ 2026-11-05 23:23:08,597] 63 root - INFO - Searching vector store for query: The borrower's largest customer represents 55% of revenue. What does the policy require and who needs to approve?
+[ 2026-11-05 23:23:08,867] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:23:08,887] 79 root - INFO - Similarity search completed for the query: The borrower's largest customer represents 55% of revenue. What does the policy require and who needs to approve?
+[ 2026-11-05 23:23:08,887] 32 root - INFO - Retrieval completed for query: The borrower's largest customer represents 55% of revenue. What does the policy require and who needs to approve?
+[ 2026-11-05 23:23:24,968] 29 root - INFO - Retrieval started for query: My EBITDA add-backs come to 18% of reported EBITDA. Who needs to sign that off?
+[ 2026-11-05 23:23:24,968] 63 root - INFO - Searching vector store for query: My EBITDA add-backs come to 18% of reported EBITDA. Who needs to sign that off?
+[ 2026-11-05 23:23:25,314] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:23:25,327] 79 root - INFO - Similarity search completed for the query: My EBITDA add-backs come to 18% of reported EBITDA. Who needs to sign that off?
+[ 2026-11-05 23:23:25,328] 32 root - INFO - Retrieval completed for query: My EBITDA add-backs come to 18% of reported EBITDA. Who needs to sign that off?
+[ 2026-11-05 23:23:41,170] 29 root - INFO - Retrieval started for query: Approving this deal would push our exposure to the sector over the Amber concentration limit. What's the escalation?
+[ 2026-11-05 23:23:41,170] 63 root - INFO - Searching vector store for query: Approving this deal would push our exposure to the sector over the Amber concentration limit. What's the escalation?
+[ 2026-11-05 23:23:41,454] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:23:41,461] 79 root - INFO - Similarity search completed for the query: Approving this deal would push our exposure to the sector over the Amber concentration limit. What's the escalation?
+[ 2026-11-05 23:23:41,461] 32 root - INFO - Retrieval completed for query: Approving this deal would push our exposure to the sector over the Amber concentration limit. What's the escalation?
+[ 2026-11-05 23:23:57,715] 29 root - INFO - Retrieval started for query: The borrower has a key customer in a high-risk third country. Is there any sign-off needed before I start the credit assessment?
+[ 2026-11-05 23:23:57,715] 63 root - INFO - Searching vector store for query: The borrower has a key customer in a high-risk third country. Is there any sign-off needed before I start the credit assessment?
+[ 2026-11-05 23:23:58,024] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:23:58,033] 79 root - INFO - Similarity search completed for the query: The borrower has a key customer in a high-risk third country. Is there any sign-off needed before I start the credit assessment?
+[ 2026-11-05 23:23:58,034] 32 root - INFO - Retrieval completed for query: The borrower has a key customer in a high-risk third country. Is there any sign-off needed before I start the credit assessment?
+[ 2026-11-05 23:24:15,973] 29 root - INFO - Retrieval started for query: I can only get 16% headroom on the leverage covenant at the first test date. Can that be approved, and by whom?
+[ 2026-11-05 23:24:15,973] 63 root - INFO - Searching vector store for query: I can only get 16% headroom on the leverage covenant at the first test date. Can that be approved, and by whom?
+[ 2026-11-05 23:24:16,214] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:24:16,220] 79 root - INFO - Similarity search completed for the query: I can only get 16% headroom on the leverage covenant at the first test date. Can that be approved, and by whom?
+[ 2026-11-05 23:24:16,220] 32 root - INFO - Retrieval completed for query: I can only get 16% headroom on the leverage covenant at the first test date. Can that be approved, and by whom?
+[ 2026-11-05 23:24:31,453] 29 root - INFO - Retrieval started for query: The deal fails the severe stress — forced-sale security cover is only 70%. What are the options?
+[ 2026-11-05 23:24:31,453] 63 root - INFO - Searching vector store for query: The deal fails the severe stress — forced-sale security cover is only 70%. What are the options?
+[ 2026-11-05 23:24:31,729] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:24:31,734] 79 root - INFO - Similarity search completed for the query: The deal fails the severe stress — forced-sale security cover is only 70%. What are the options?
+[ 2026-11-05 23:24:31,734] 32 root - INFO - Retrieval completed for query: The deal fails the severe stress — forced-sale security cover is only 70%. What are the options?
+[ 2026-11-05 23:24:47,996] 29 root - INFO - Retrieval started for query: An engineering business in a standard sector would be at 3.3x senior debt / EBITDA after our loan. Can this be approved, and by whom?
+[ 2026-11-05 23:24:47,996] 63 root - INFO - Searching vector store for query: An engineering business in a standard sector would be at 3.3x senior debt / EBITDA after our loan. Can this be approved, and by whom?
+[ 2026-11-05 23:24:48,218] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:24:48,223] 79 root - INFO - Similarity search completed for the query: An engineering business in a standard sector would be at 3.3x senior debt / EBITDA after our loan. Can this be approved, and by whom?
+[ 2026-11-05 23:24:48,223] 32 root - INFO - Retrieval completed for query: An engineering business in a standard sector would be at 3.3x senior debt / EBITDA after our loan. Can this be approved, and by whom?
+[ 2026-11-05 23:25:03,943] 29 root - INFO - Retrieval started for query: The obligor's TCE would be £55m, and the directors own other businesses that bank with us. How is this handled?
+[ 2026-11-05 23:25:03,943] 63 root - INFO - Searching vector store for query: The obligor's TCE would be £55m, and the directors own other businesses that bank with us. How is this handled?
+[ 2026-11-05 23:25:04,218] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:25:04,227] 79 root - INFO - Similarity search completed for the query: The obligor's TCE would be £55m, and the directors own other businesses that bank with us. How is this handled?
+[ 2026-11-05 23:25:04,227] 32 root - INFO - Retrieval completed for query: The obligor's TCE would be £55m, and the directors own other businesses that bank with us. How is this handled?
+[ 2026-11-05 23:25:20,978] 29 root - INFO - Retrieval started for query: We have an application from a cryptoasset exchange. What approvals and conditions apply?
+[ 2026-11-05 23:25:20,978] 63 root - INFO - Searching vector store for query: We have an application from a cryptoasset exchange. What approvals and conditions apply?
+[ 2026-11-05 23:25:21,482] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:25:21,498] 79 root - INFO - Similarity search completed for the query: We have an application from a cryptoasset exchange. What approvals and conditions apply?
+[ 2026-11-05 23:25:21,498] 32 root - INFO - Retrieval completed for query: We have an application from a cryptoasset exchange. What approvals and conditions apply?
+[ 2026-11-05 23:25:38,104] 29 root - INFO - Retrieval started for query: Under the moderate stress the DSCR is 0.85x and cash plus undrawn RCF only covers 8 months of the shortfall. What happens now?
+[ 2026-11-05 23:25:38,104] 63 root - INFO - Searching vector store for query: Under the moderate stress the DSCR is 0.85x and cash plus undrawn RCF only covers 8 months of the shortfall. What happens now?
+[ 2026-11-05 23:25:38,344] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:25:38,356] 79 root - INFO - Similarity search completed for the query: Under the moderate stress the DSCR is 0.85x and cash plus undrawn RCF only covers 8 months of the shortfall. What happens now?
+[ 2026-11-05 23:25:38,357] 32 root - INFO - Retrieval completed for query: Under the moderate stress the DSCR is 0.85x and cash plus undrawn RCF only covers 8 months of the shortfall. What happens now?
+[ 2026-11-05 23:25:54,141] 29 root - INFO - Retrieval started for query: I'm assessing a restaurant group that has traded for 4 years. How does the policy treat hospitality and what specific conditions and stresses apply?
+[ 2026-11-05 23:25:54,142] 63 root - INFO - Searching vector store for query: I'm assessing a restaurant group that has traded for 4 years. How does the policy treat hospitality and what specific conditions and stresses apply?
+[ 2026-11-05 23:25:54,436] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:25:54,450] 79 root - INFO - Similarity search completed for the query: I'm assessing a restaurant group that has traded for 4 years. How does the policy treat hospitality and what specific conditions and stresses apply?
+[ 2026-11-05 23:25:54,450] 32 root - INFO - Retrieval completed for query: I'm assessing a restaurant group that has traded for 4 years. How does the policy treat hospitality and what specific conditions and stresses apply?
+[ 2026-11-05 23:26:11,869] 29 root - INFO - Retrieval started for query: Which applications need a stress test, and what shocks are applied in the mild, moderate and severe scenarios?
+[ 2026-11-05 23:26:11,870] 63 root - INFO - Searching vector store for query: Which applications need a stress test, and what shocks are applied in the mild, moderate and severe scenarios?
+[ 2026-11-05 23:26:12,275] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:26:12,293] 79 root - INFO - Similarity search completed for the query: Which applications need a stress test, and what shocks are applied in the mild, moderate and severe scenarios?
+[ 2026-11-05 23:26:12,293] 32 root - INFO - Retrieval completed for query: Which applications need a stress test, and what shocks are applied in the mild, moderate and severe scenarios?
+[ 2026-11-05 23:26:30,698] 29 root - INFO - Retrieval started for query: Walk me through how the maximum lending amount is set, using the grade-5 Small-segment engineering firm example.
+[ 2026-11-05 23:26:30,698] 63 root - INFO - Searching vector store for query: Walk me through how the maximum lending amount is set, using the grade-5 Small-segment engineering firm example.
+[ 2026-11-05 23:26:30,965] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:26:30,977] 79 root - INFO - Similarity search completed for the query: Walk me through how the maximum lending amount is set, using the grade-5 Small-segment engineering firm example.
+[ 2026-11-05 23:26:30,977] 32 root - INFO - Retrieval completed for query: Walk me through how the maximum lending amount is set, using the grade-5 Small-segment engineering firm example.
+[ 2026-11-05 23:26:47,205] 29 root - INFO - Retrieval started for query: We're lending to a non-food retailer with a lot of leased stores. How should leases be treated and what sector-specific analysis applies?
+[ 2026-11-05 23:26:47,205] 63 root - INFO - Searching vector store for query: We're lending to a non-food retailer with a lot of leased stores. How should leases be treated and what sector-specific analysis applies?
+[ 2026-11-05 23:26:47,445] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:26:47,457] 79 root - INFO - Similarity search completed for the query: We're lending to a non-food retailer with a lot of leased stores. How should leases be treated and what sector-specific analysis applies?
+[ 2026-11-05 23:26:47,457] 32 root - INFO - Retrieval completed for query: We're lending to a non-food retailer with a lot of leased stores. How should leases be treated and what sector-specific analysis applies?
+[ 2026-11-05 23:27:06,152] 29 root - INFO - Retrieval started for query: I've got a recruitment agency applying for a facility. What are the sector conditions, stresses and things to watch?
+[ 2026-11-05 23:27:06,152] 63 root - INFO - Searching vector store for query: I've got a recruitment agency applying for a facility. What are the sector conditions, stresses and things to watch?
+[ 2026-11-05 23:27:06,372] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:27:06,383] 79 root - INFO - Similarity search completed for the query: I've got a recruitment agency applying for a facility. What are the sector conditions, stresses and things to watch?
+[ 2026-11-05 23:27:06,383] 32 root - INFO - Retrieval completed for query: I've got a recruitment agency applying for a facility. What are the sector conditions, stresses and things to watch?
+[ 2026-11-05 23:27:23,540] 29 root - INFO - Retrieval started for query: The borrower is a care home that has just been rated 'Requires Improvement' by CQC. Does that change how we treat it?
+[ 2026-11-05 23:27:23,541] 63 root - INFO - Searching vector store for query: The borrower is a care home that has just been rated 'Requires Improvement' by CQC. Does that change how we treat it?
+[ 2026-11-05 23:27:23,834] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:27:23,845] 79 root - INFO - Similarity search completed for the query: The borrower is a care home that has just been rated 'Requires Improvement' by CQC. Does that change how we treat it?
+[ 2026-11-05 23:27:23,845] 32 root - INFO - Retrieval completed for query: The borrower is a care home that has just been rated 'Requires Improvement' by CQC. Does that change how we treat it?
+[ 2026-11-05 23:27:41,295] 29 root - INFO - Retrieval started for query: A pre-revenue software company with capitalised development costs wants a term loan. How does the policy treat it?
+[ 2026-11-05 23:27:41,295] 63 root - INFO - Searching vector store for query: A pre-revenue software company with capitalised development costs wants a term loan. How does the policy treat it?
+[ 2026-11-05 23:27:41,566] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:27:41,575] 79 root - INFO - Similarity search completed for the query: A pre-revenue software company with capitalised development costs wants a term loan. How does the policy treat it?
+[ 2026-11-05 23:27:41,575] 32 root - INFO - Retrieval completed for query: A pre-revenue software company with capitalised development costs wants a term loan. How does the policy treat it?
+[ 2026-11-05 23:27:59,344] 29 root - INFO - Retrieval started for query: We're doing an investment property loan on a warehouse in Flood Zone 3. What limits and stresses apply?
+[ 2026-11-05 23:27:59,344] 63 root - INFO - Searching vector store for query: We're doing an investment property loan on a warehouse in Flood Zone 3. What limits and stresses apply?
+[ 2026-11-05 23:27:59,636] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:27:59,647] 79 root - INFO - Similarity search completed for the query: We're doing an investment property loan on a warehouse in Flood Zone 3. What limits and stresses apply?
+[ 2026-11-05 23:27:59,647] 32 root - INFO - Retrieval completed for query: We're doing an investment property loan on a warehouse in Flood Zone 3. What limits and stresses apply?
+[ 2026-11-05 23:28:15,916] 29 root - INFO - Retrieval started for query: In the MGT Foods UK worked example, why were the facilities declined as requested, and what structure was approved instead?
+[ 2026-11-05 23:28:15,916] 63 root - INFO - Searching vector store for query: In the MGT Foods UK worked example, why were the facilities declined as requested, and what structure was approved instead?
+[ 2026-11-05 23:28:16,137] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:28:16,145] 79 root - INFO - Similarity search completed for the query: In the MGT Foods UK worked example, why were the facilities declined as requested, and what structure was approved instead?
+[ 2026-11-05 23:28:16,145] 32 root - INFO - Retrieval completed for query: In the MGT Foods UK worked example, why were the facilities declined as requested, and what structure was approved instead?
+[ 2026-11-05 23:28:33,345] 29 root - INFO - Retrieval started for query: A seasonal arable farm needs an overdraft to fund the growing season, and its EBITDA swung about 30% between two of the last three years. What does the policy require?
+[ 2026-11-05 23:28:33,345] 63 root - INFO - Searching vector store for query: A seasonal arable farm needs an overdraft to fund the growing season, and its EBITDA swung about 30% between two of the last three years. What does the policy require?
+[ 2026-11-05 23:28:33,646] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:28:33,659] 79 root - INFO - Similarity search completed for the query: A seasonal arable farm needs an overdraft to fund the growing season, and its EBITDA swung about 30% between two of the last three years. What does the policy require?
+[ 2026-11-05 23:28:33,660] 32 root - INFO - Retrieval completed for query: A seasonal arable farm needs an overdraft to fund the growing season, and its EBITDA swung about 30% between two of the last three years. What does the policy require?
+[ 2026-11-05 23:28:50,666] 29 root - INFO - Retrieval started for query: The directors have lent the company £400k. Can I treat the director loans as equity, and do repayments count in debt service?
+[ 2026-11-05 23:28:50,666] 63 root - INFO - Searching vector store for query: The directors have lent the company £400k. Can I treat the director loans as equity, and do repayments count in debt service?
+[ 2026-11-05 23:28:50,994] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:28:51,014] 79 root - INFO - Similarity search completed for the query: The directors have lent the company £400k. Can I treat the director loans as equity, and do repayments count in debt service?
+[ 2026-11-05 23:28:51,014] 32 root - INFO - Retrieval completed for query: The directors have lent the company £400k. Can I treat the director loans as equity, and do repayments count in debt service?
+[ 2026-11-05 23:29:08,073] 29 root - INFO - Retrieval started for query: The FY21 accounts include furlough income and business rates relief. How should I treat COVID-era figures?
+[ 2026-11-05 23:29:08,073] 63 root - INFO - Searching vector store for query: The FY21 accounts include furlough income and business rates relief. How should I treat COVID-era figures?
+[ 2026-11-05 23:29:08,321] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:29:08,327] 79 root - INFO - Similarity search completed for the query: The FY21 accounts include furlough income and business rates relief. How should I treat COVID-era figures?
+[ 2026-11-05 23:29:08,327] 32 root - INFO - Retrieval completed for query: The FY21 accounts include furlough income and business rates relief. How should I treat COVID-era figures?
+[ 2026-11-05 23:29:25,389] 29 root - INFO - Retrieval started for query: The client wants to add back redundancy costs again this year — they also had redundancy costs two years ago. Is the add-back allowed?
+[ 2026-11-05 23:29:25,389] 63 root - INFO - Searching vector store for query: The client wants to add back redundancy costs again this year — they also had redundancy costs two years ago. Is the add-back allowed?
+[ 2026-11-05 23:29:25,626] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:29:25,631] 79 root - INFO - Similarity search completed for the query: The client wants to add back redundancy costs again this year — they also had redundancy costs two years ago. Is the add-back allowed?
+[ 2026-11-05 23:29:25,631] 32 root - INFO - Retrieval completed for query: The client wants to add back redundancy costs again this year — they also had redundancy costs two years ago. Is the add-back allowed?
+[ 2026-11-05 23:29:43,221] 29 root - INFO - Retrieval started for query: Sales are falling, so working capital is being released and boosting cash flow. Can I count that release in CFADS?
+[ 2026-11-05 23:29:43,221] 63 root - INFO - Searching vector store for query: Sales are falling, so working capital is being released and boosting cash flow. Can I count that release in CFADS?
+[ 2026-11-05 23:29:43,488] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:29:43,496] 79 root - INFO - Similarity search completed for the query: Sales are falling, so working capital is being released and boosting cash flow. Can I count that release in CFADS?
+[ 2026-11-05 23:29:43,496] 32 root - INFO - Retrieval completed for query: Sales are falling, so working capital is being released and boosting cash flow. Can I count that release in CFADS?
+[ 2026-11-05 23:30:03,241] 29 root - INFO - Retrieval started for query: Last full-year EBITDA was £1.2m but the latest management accounts show LTM EBITDA of £1.05m. Which do I use for CFADS?
+[ 2026-11-05 23:30:03,241] 63 root - INFO - Searching vector store for query: Last full-year EBITDA was £1.2m but the latest management accounts show LTM EBITDA of £1.05m. Which do I use for CFADS?
+[ 2026-11-05 23:30:03,504] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:30:03,521] 79 root - INFO - Similarity search completed for the query: Last full-year EBITDA was £1.2m but the latest management accounts show LTM EBITDA of £1.05m. Which do I use for CFADS?
+[ 2026-11-05 23:30:03,521] 32 root - INFO - Retrieval completed for query: Last full-year EBITDA was £1.2m but the latest management accounts show LTM EBITDA of £1.05m. Which do I use for CFADS?
+[ 2026-11-05 23:30:22,437] 29 root - INFO - Retrieval started for query: The borrower says they would cut dividends and defer capex in a downturn. Can I include those actions to pass the stress tests?
+[ 2026-11-05 23:30:22,438] 63 root - INFO - Searching vector store for query: The borrower says they would cut dividends and defer capex in a downturn. Can I include those actions to pass the stress tests?
+[ 2026-11-05 23:30:22,848] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:30:22,865] 79 root - INFO - Similarity search completed for the query: The borrower says they would cut dividends and defer capex in a downturn. Can I include those actions to pass the stress tests?
+[ 2026-11-05 23:30:22,865] 32 root - INFO - Retrieval completed for query: The borrower says they would cut dividends and defer capex in a downturn. Can I include those actions to pass the stress tests?
+[ 2026-11-05 23:30:39,365] 29 root - INFO - Retrieval started for query: A food retailer has a current ratio of 0.85x. Does that mean we should decline?
+[ 2026-11-05 23:30:39,366] 63 root - INFO - Searching vector store for query: A food retailer has a current ratio of 0.85x. Does that mean we should decline?
+[ 2026-11-05 23:30:39,587] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:30:39,595] 79 root - INFO - Similarity search completed for the query: A food retailer has a current ratio of 0.85x. Does that mean we should decline?
+[ 2026-11-05 23:30:39,595] 32 root - INFO - Retrieval completed for query: A food retailer has a current ratio of 0.85x. Does that mean we should decline?
+[ 2026-11-05 23:30:57,100] 29 root - INFO - Retrieval started for query: The borrowing entity is a newly formed SPV with no trading activity that will hold an investment property. Isn't that a prohibited shell company?
+[ 2026-11-05 23:30:57,100] 63 root - INFO - Searching vector store for query: The borrowing entity is a newly formed SPV with no trading activity that will hold an investment property. Isn't that a prohibited shell company?
+[ 2026-11-05 23:30:57,357] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:30:57,369] 79 root - INFO - Similarity search completed for the query: The borrowing entity is a newly formed SPV with no trading activity that will hold an investment property. Isn't that a prohibited shell company?
+[ 2026-11-05 23:30:57,370] 32 root - INFO - Retrieval completed for query: The borrowing entity is a newly formed SPV with no trading activity that will hold an investment property. Isn't that a prohibited shell company?
+[ 2026-11-05 23:31:15,127] 29 root - INFO - Retrieval started for query: The proposed term loan has a 40% balloon at maturity. Is there a specific test for that?
+[ 2026-11-05 23:31:15,127] 63 root - INFO - Searching vector store for query: The proposed term loan has a 40% balloon at maturity. Is there a specific test for that?
+[ 2026-11-05 23:31:16,014] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:16,021] 79 root - INFO - Similarity search completed for the query: The proposed term loan has a 40% balloon at maturity. Is there a specific test for that?
+[ 2026-11-05 23:31:16,021] 32 root - INFO - Retrieval completed for query: The proposed term loan has a 40% balloon at maturity. Is there a specific test for that?
+[ 2026-11-05 23:31:31,164] 29 root - INFO - Retrieval started for query: This is acquisition finance and management are projecting synergies. How should synergies and deal costs be treated?
+[ 2026-11-05 23:31:31,164] 63 root - INFO - Searching vector store for query: This is acquisition finance and management are projecting synergies. How should synergies and deal costs be treated?
+[ 2026-11-05 23:31:31,416] 1085 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:31,429] 79 root - INFO - Similarity search completed for the query: This is acquisition finance and management are projecting synergies. How should synergies and deal costs be treated?
+[ 2026-11-05 23:31:31,430] 32 root - INFO - Retrieval completed for query: This is acquisition finance and management are projecting synergies. How should synergies and deal costs be treated?
+[ 2026-11-05 23:31:47,260] 60 root - INFO - Test cases build for reranker retriever evaluation
+[ 2026-11-05 23:31:47,416] 88 root - INFO - Evaluation started for reranker retriever
+[ 2026-11-05 23:31:47,909] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,093] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,155] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,398] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,433] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,464] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,522] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,548] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,586] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,628] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,778] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,827] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,859] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,918] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:52,957] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:53,015] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:53,066] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:53,122] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:53,168] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:53,204] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:54,470] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,675] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,759] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,767] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,771] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,777] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,901] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,903] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,907] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,910] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,962] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,966] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:54,988] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,043] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,130] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,234] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,278] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,283] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,505] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,639] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,641] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,643] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,688] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,854] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,929] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,932] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,979] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,982] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,991] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:55,992] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,031] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,059] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,060] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,109] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,118] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,136] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,140] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,170] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,171] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,173] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,187] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,255] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,301] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,312] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,314] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,315] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,316] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,317] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,318] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,319] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,348] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,349] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,362] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,417] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,448] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,465] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,548] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,778] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:56,843] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,276] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:57,337] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,338] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,339] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,341] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,342] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,343] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,343] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,344] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,345] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:57,361] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,344] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,355] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,368] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,380] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,392] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,422] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,439] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,455] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,724] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:31:58,735] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,736] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,737] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,738] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,738] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,739] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,740] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,741] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,745] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,769] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:31:58,808] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:00,625] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,644] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,660] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,677] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,690] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,707] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,722] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,741] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:00,784] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:01,001] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:02,096] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,152] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,184] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,252] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,289] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,371] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,373] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,454] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,583] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,672] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,720] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,763] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,817] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,886] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,888] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,888] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:02,934] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,214] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,217] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,276] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,292] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,316] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,352] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,358] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,363] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,410] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,484] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,486] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,488] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,536] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,537] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,542] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,558] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,559] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,710] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,749] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,761] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,770] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,777] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,825] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,937] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:03,947] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,009] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,195] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,217] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,222] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,235] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,242] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,254] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,257] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,260] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,290] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,348] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,349] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,364] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,376] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,423] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,477] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,545] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:04,961] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:05,088] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,090] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,092] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,093] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,095] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,096] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,099] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,103] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,105] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,107] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,109] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,110] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,144] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:05,145] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:08,665] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:08,667] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,678] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,691] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,721] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,734] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,751] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,770] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,789] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,815] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,850] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:08,876] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:09,298] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:09,299] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:09,300] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:09,301] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:09,302] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:09,304] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:09,316] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:09,521] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:09,737] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:10,658] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:10,682] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:10,701] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:10,717] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:10,735] 731 deepeval.evaluate.execute.e2e - INFO - in _a_execute_llm_test_cases
+[ 2026-11-05 23:32:12,308] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,347] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,550] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,565] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,633] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,697] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,728] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,881] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:12,884] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,022] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,059] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,144] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,303] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,426] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,429] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,478] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,479] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,495] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,559] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,563] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,619] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,679] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,690] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,693] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,716] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,722] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,734] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,773] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,798] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,817] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,823] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,947] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:13,962] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,058] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,059] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,124] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,141] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,157] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,168] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,188] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,239] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,385] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,429] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,464] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,474] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,524] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,548] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,555] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,648] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,649] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,729] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,731] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,780] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,839] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:14,948] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:15,145] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:15,148] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:15,151] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:15,154] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:15,158] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,002] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,003] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,009] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,014] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,015] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,016] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,017] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,018] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,019] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,020] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,021] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,021] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,022] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,023] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,024] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:16,025] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:19,035] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:32:19,232] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:33:37,401] 487 deepeval.retry.openai - ERROR - call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt. Retrying: 1 time(s)...
+[ 2026-11-05 23:33:37,409] 452 deepeval.retry.openai - INFO - Retrying in 2.333587806080254 s (attempt 1) after TimeoutError('call timed out after 88.5s (per attempt). Increase DEEPEVAL_PER_ATTEMPT_TIMEOUT_SECONDS_OVERRIDE (None disables) or reduce work per attempt.')
+[ 2026-11-05 23:33:42,201] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:33:43,336] 1923 httpx2 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+[ 2026-11-05 23:33:46,639] 103 root - INFO - Evaluations completed for reranker retriever
