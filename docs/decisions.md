@@ -30,16 +30,26 @@ top_k_retriever: 20, top_k_retriever:5
 Seems good imporvement after adding reranker. Will test different k values in future to optimise it more. For now, added reranker in retriever by default. 
 ------
 Eval results with 60 test cases:
-reranker results
-recall: 0.91
-precisiion: 0.88
-top_k_retriever: 20, top_k_retriever:5
+Simple retriever:
+    emebding: 
+    Recall: 0.95
+    Precision: 0.82
+    retriever_top_k: 12
+    pass rate: 73%
 
-recall: 0.91
-precisiion: 0.89
-top_k_retriever: 10, top_k_retriever:5
+Reranker retriver:
+    Run1: 
+        Recall: 0.91
+        precision: 0.90
+        retrier_top_k: 12
+        reranker_top_k: 5
+        pass rate: 81.67%
+    
+    Run 2: 
+        Recall: 0.93
+        precision: 0.90
+        retrier_top_k: 15
+        reranker_top_k: 5
+        pass rate: 83.33%
 
-recall: 0.90
-precisiion: 0.89
-top_k_retriever: 10, top_k_retriever:6
 

@@ -151,8 +151,8 @@ CREDIT_POLICY_FILE_PATH = "data/credit_policy_extract_2.pdf"
 #     pickle.dump(chunks, f)
 
 # #RETRIEVER TESTING - using vectorstore class
-with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
-    chunks = pickle.load(file)
+# with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
+#     chunks = pickle.load(file)
 
 # vector_store= VectorStore()
 
@@ -182,7 +182,7 @@ with open("data/artifacts/credit_policy_chunks.pkl", "rb") as file:
 
 # #RETRIEVAL EVALS test
 start = time.time()
-evaluator = RetrieverEval(eval_description="reranker retriever")
+evaluator = RetrieverEval(eval_description="retriever with reranker")
 
 evaluator.run_evals()
 end = time.time()
@@ -208,15 +208,15 @@ print("run time:", end-start)
 # print()
 # print("run time:", end-start)
 
-# #RAG PIPELINE TEST
+#RAG PIPELINE TEST
 # start = time.time()
-# query = "What are the DSCR thresholds in the policy — what's considered strong, what's the minimum, and when is it an outright decline?"
+# query = "When do I have to use the credit memo template, and can I drop sections that aren't relevant?"
 # rag_pipeline = RAGPipeline(query=query)
 # rag_pipeline.run()
-# # answer, sources = rag_pipeline.run()
-# # print("ANSWER: ", answer)
-# # print("-----------")
-# # print("SOURCES: ", sources)
+# answer, sources = rag_pipeline.run()
+# print("ANSWER: ", answer)
+# print("-----------")
+# print("SOURCES: ", sources)
 
 # end = time.time()
 # print()

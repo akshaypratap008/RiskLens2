@@ -24,7 +24,7 @@ class Retriever:
         self.reranker = CrossEncoder(RERANKER_MODEL)
 
     def retrieve(self, query: str) -> list[dict]:
-        """Retrieve top_k results for the query"""
+        """Simple Retriever - Retrieve top_k results for the query"""
         try:
             logging.info(f"Retrieval started for query: {query}")
             results = self.vector_store.query_search_with_score(query = query, top_k=RETRIEVR_TOP_K)
@@ -36,7 +36,7 @@ class Retriever:
             raise CustomException(e, sys)
         
     def rerank_docs(self, query:str, results:list[dict]) -> list[dict]:
-        """Rerank retrieved docs using Cross encoder reranker. Add reranker scores to the existing dict for each doc, sort them and pick top_k results"""
+        """Reranker - Rerank retrieved docs using Cross encoder reranker. Add reranker scores to the existing dict for each doc, sort them and pick top_k results"""
         pairs = [(query, result['content']) for result in results]
         reranked_scores = self.reranker.predict(pairs)
 

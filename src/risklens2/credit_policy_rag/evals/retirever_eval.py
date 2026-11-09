@@ -49,6 +49,8 @@ class RetrieverEval:
                     results = actual_retrieval_output
                 )
 
+                # retrieval_context = [result['content'] for result in actual_retrieval_output]
+
                 retrieval_context = [result['content'] for result in reranked_retrieved_output]
                 
                 test_cases.append(LLMTestCase(
@@ -93,8 +95,10 @@ class RetrieverEval:
                     "retriever": self.eval_description,
                     "chunker": config['rag']['chunker']['strategy'],
                     "embedding_model": config['rag']['vector_store']['chromadb']['embedding_model'],
-                    "top_k": config['rag']['retriever']['top_k'],
+                    "top_k_retriever": config['rag']['retriever']['top_k'],
                     "judge_model": config['rag']['evals']['retriever_eval']['eval_metrics_parameters']['model'],
+                    "top_k_reranker": config['rag']['reranker']['top_k'],
+                    "reranker_model": config['rag']['reranker']['model'],
                     "golden_dataset_name": config['rag']['evals']['retriever_eval']['dataset_name']
                 },
                 display_config=DisplayConfig(results_folder=EVAL_RESULTS_FOLDER)

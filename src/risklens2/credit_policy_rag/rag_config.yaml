@@ -19,7 +19,7 @@ rag:
           space: "cosine"
 
   retriever:
-    top_k: 12
+    top_k: 15
 
   evals:
     goldens_folder_path: src\risklens2\credit_policy_rag\evals\goldens
